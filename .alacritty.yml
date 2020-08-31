@@ -1,0 +1,119 @@
+# Font configuration (changes require restart)
+font:
+    # Style can be specified to pick a specific face.
+  normal:
+    family: Hack
+
+  bold:
+    family: Hack
+
+  italic:
+    family: Hack
+
+  size: 12
+
+schemes:
+    ayu-mirage: &ayu
+        primary:
+            background: '#202734'
+            foreground: '#CBCCC6'
+
+        normal:
+            black: '#191E2A'
+            red: '#FF3333'
+            green: '#BAE67E'
+            yellow: '#FFA759'
+            blue: '#73D0FF'
+            magenta: '#FFD580'
+            cyan: '#95E6CB'
+            white: '#C7C7C7'
+
+        bright:
+            black: '#686868'
+            red: '#F27983'
+            green: '#A6CC70'
+            yellow: '#FFCC66'
+            blue: '#5CCFE6'
+            magenta: '#FFEE99'
+            cyan: '#95E6CB'
+            white: '#FFFFFF'
+   
+    one-dark: &one 
+        primary:
+            background: '#282c34'
+            foreground: '#abb2bf'
+
+        normal:
+            black:   '#282c34'
+            red:     '#e06c75'
+            green:   '#98c379'
+            yellow:  '#d19a66'
+            blue:    '#61afef'
+            magenta: '#c678dd'
+            cyan:    '#56b6c2'
+            white:   '#abb2bf'
+
+        bright:
+             black:   '#5c6370'
+             red:     '#e06c75'
+             green:   '#98c379'
+             yellow:  '#d19a66'
+             blue:    '#61afef'
+             magenta: '#c678dd'
+             cyan:    '#56b6c2'
+             white:   '#ffffff'
+
+    monokai-pro: &monokai
+        primary:
+            background: '#2c3746'
+            foreground: '#FCFCFA'
+
+        normal:
+            black:   '#403E41'
+            red:     '#FF6188'
+            green:   '#A9DC76'
+            yellow:  '#FFD866'
+            blue:    '#FC9867'
+            magenta: '#AB9DF2'
+            cyan:    '#78DCE8'
+            white:   '#FCFCFA'
+
+        bright:
+            black:   '#727072'
+            red:     '#FF6188'
+            green:   '#A9DC76'
+            yellow:  '#FFD866'
+            blue:    '#FC9867'
+            magenta: '#AB9DF2'
+            cyan:    '#78DCE8'
+            white:   '#FCFCFA'
+
+colors: *monokai
+draw_bold_text_with_bright_colors: true
+
+# Window dimensions in character columns and lines
+# (changes require restart)
+dimensions:
+columns: 120
+lines: 35
+
+# Background opacity
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 1.0
+
+# Window decorations
+# Values for `decorations`:
+#     - full: Borders and title bar
+#     - none: Neither borders nor title bar
+decorations: none
+
+# Allow terminal applications to change Alacritty's window title.
+dynamic_title: false
+
+# Startup Mode (changes require restart)
+# Values for `startup_mode`:
+#   - Windowed
+#   - Maximized
+#   - Fullscreen
+startup_mode: Maximized
