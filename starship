@@ -6,5 +6,5 @@ disabled = true
 [cmd_duration]
 disabled = true
 
-[line_break]
-disabled = true
+#[line_break]
+#disabled = true

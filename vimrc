@@ -1,73 +1,93 @@
+" general settings "
 set nocompatible
-filetype off
-syntax on
 filetype plugin indent on
-set modelines=0
+set backspace=indent,eol,start
+set autoread
+set hidden
+set nostartofline
+set encoding=utf-8
+set noswapfile
+set lazyredraw
+set ttyfast
+set nomodeline
+
+" indentation and wrapping "
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set smartindent
 set wrap
 set linebreak
 set breakindent
-set number
+
+" better searching "
 set hlsearch
 set incsearch
-set ignorecase
 set smartcase
-set backspace=indent,eol,start
-set ttyfast
+set ignorecase
+
+" UI "
 set laststatus=2
-set encoding=utf-8
-set noerrorbells
-set noswapfile
 set wildmenu
-set shiftwidth=4
-set tabstop=4
-set showcmd
-set nostartofline
-set autoindent
+set path+=**
 set cmdheight=1
-so ~/.vim/plugins.vim
-set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
-let g:lightline = {
-  \		'colorscheme': "wombat",
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
-  \     }
-  \ }
-imap <C-c> <Esc><Esc>
-nnoremap <C-j> :m+<CR>==
-nnoremap <C-k> :m-2<CR>==
-nnoremap T :NERDTreeToggle<CR>
+set showcmd
+set number
+set noshowmode
+
+" file browsing "
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+
+" mappings "
+map Y y$
+map <C-c> <Esc><Esc>
+map 0 ^
+noremap <C-L> :nohl<CR>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ( ()<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap ` ``<Left>
-inoremap {} {}
-inoremap [] []
-inoremap () ()
-inoremap "" ""
-inoremap '' ''
-inoremap `` ``
+vnoremap Y "+y
 
-let g:racer_cmd = "/home/jeremy/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
-let g:racer_insert_paren = 1
-set hidden
+" color theme "
+if !exists("g:syntax_on")
+	syntax enable
+endif
+set termguicolors
+set background=dark
+colorscheme yep
 
-let g:rustfmt_autosave = 1
+" status line "
+hi StatusLineNC ctermfg=black ctermbg=yellow cterm=NONE
+hi User1 ctermfg=black ctermbg=magenta
+hi User2 ctermfg=NONE ctermbg=black
+hi User3 ctermfg=black ctermbg=blue
+hi User4 ctermfg=black ctermbg=cyan
+set statusline=\ %{GetFullMode()}\ %#StatusLineNC#%{branch}%3*\ %F%m\ %2*%=%1*\ %{file_type}\ %4*\ %l:%c\ (%p%%)\  
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" display git branch if it exists "
+augroup git_branch_name
+	au!
+	autocmd BufEnter * let branch = BranchName()
+augroup end
 
-nmap <F8> :TagbarToggle<CR>
+function! BranchName()
+	let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+	return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
+endfunction
+
+" display file type if there is one "
+augroup display_filetype
+	au!
+	autocmd BufEnter * let file_type = CheckFileType()
+augroup end
+
+function! CheckFileType()
+	return strlen(&ft) > 0 ? &ft : "text"
+endfunction
+
+" display current mode "
+function! GetFullMode()
+	let mode_map = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK','c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'}
+	return mode_map[mode()]
+endfunction

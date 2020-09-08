@@ -2,13 +2,19 @@
 font:
     # Style can be specified to pick a specific face.
   normal:
+      #family: IBM Plex Mono
     family: Hack
+      #family: Fira Code
 
   bold:
+      #family: IBM Plex Mono
     family: Hack
+    #family: Fira Code
 
   italic:
+      #family: IBM Plex Mono
     family: Hack
+      #family: Fira Code
 
   size: 12
 
@@ -65,7 +71,7 @@ schemes:
 
     monokai-pro: &monokai
         primary:
-            background: '#2c3746'
+            background: '#212733'
             foreground: '#FCFCFA'
 
         normal:
