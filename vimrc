@@ -61,7 +61,7 @@ hi User3 ctermfg=black ctermbg=blue
 hi User4 ctermfg=black ctermbg=yellow
 hi User5 ctermfg=black ctermbg=green
 hi User6 ctermfg=black ctermbg=lightblue
-hi User7 ctermfg=black ctermbg=darkmagenta
+hi User7 ctermfg=black ctermbg=darkmagenta cterm=bold
 set statusline=%7*\ %{FullMode()}\ %6*%{branch}%3*\ %F%m%{readonly}%#StatusLine#%=%1*%{file_type}%4*\ %l:%c\ (%p%%)\  
 
 " get the current git branch if it exists "
@@ -70,17 +70,17 @@ function! BranchName()
 	return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
 endfunction
 
-" get the full name of the current mode "
+" get the full name of the current mode and updates the color "
 function! FullMode()
 	let l:mode_map = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK','c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'}
 	if mode() == 'n'
-		hi! User7 ctermfg=black ctermbg=darkmagenta
+		hi! User7 ctermfg=black ctermbg=darkmagenta cterm=bold
 	elseif mode() == 'i'
-		hi! User7 ctermfg=black ctermbg=darkgreen
+		hi! User7 ctermfg=black ctermbg=darkgreen cterm=bold
 	elseif mode() == 'v' || mode() == 'V' || mode() == '\<C-v>'
-		hi! User7 ctermfg=black ctermbg=lightblue
+		hi! User7 ctermfg=black ctermbg=lightblue cterm=bold
 	else
-		hi! User7 ctermfg=black ctermbg=darkyellow
+		hi! User7 ctermfg=black ctermbg=darkyellow cterm=bold
 	endif
 	return l:mode_map[mode()]
 endfunction
