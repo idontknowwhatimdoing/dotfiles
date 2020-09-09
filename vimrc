@@ -30,7 +30,6 @@ set ignorecase
 set laststatus=2
 set wildmenu
 set path+=**
-set cmdheight=1
 set showcmd
 set number
 set noshowmode
@@ -41,9 +40,8 @@ let g:netrw_liststyle=3
 
 " mappings "
 map Y y$
-map <C-c> <Esc><Esc>
 map 0 ^
-noremap <C-L> :nohl<CR>
+nnoremap <C-L> :nohl<CR>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
@@ -54,40 +52,43 @@ if !exists("g:syntax_on")
 	syntax enable
 endif
 set termguicolors
-set background=dark
 colorscheme yep
 
 " status line "
-hi StatusLineNC ctermfg=black ctermbg=yellow cterm=NONE
-hi User1 ctermfg=black ctermbg=magenta
+hi User1 ctermfg=black ctermbg=red
 hi User2 ctermfg=NONE ctermbg=black
 hi User3 ctermfg=black ctermbg=blue
-hi User4 ctermfg=black ctermbg=cyan
-set statusline=\ %{GetFullMode()}\ %#StatusLineNC#%{branch}%3*\ %F%m\ %2*%=%1*\ %{file_type}\ %4*\ %l:%c\ (%p%%)\  
+hi User4 ctermfg=black ctermbg=yellow
+hi User5 ctermfg=black ctermbg=green
+hi User6 ctermfg=black ctermbg=lightblue
+hi User7 ctermfg=black ctermbg=darkmagenta
+set statusline=%7*\ %{FullMode()}\ %6*%{branch}%3*\ %F%m%{readonly}%#StatusLine#%=%1*%{file_type}%4*\ %l:%c\ (%p%%)\  
 
-" display git branch if it exists "
-augroup git_branch_name
-	au!
-	autocmd BufEnter * let branch = BranchName()
-augroup end
-
+" get the current git branch if it exists "
 function! BranchName()
 	let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 	return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
 endfunction
 
-" display file type if there is one "
-augroup display_filetype
+" get the full name of the current mode "
+function! FullMode()
+	let l:mode_map = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK','c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'}
+	if mode() == 'n'
+		hi! User7 ctermfg=black ctermbg=darkmagenta
+	elseif mode() == 'i'
+		hi! User7 ctermfg=black ctermbg=darkgreen
+	elseif mode() == 'v' || mode() == 'V' || mode() == '\<C-v>'
+		hi! User7 ctermfg=black ctermbg=lightblue
+	else
+		hi! User7 ctermfg=black ctermbg=darkyellow
+	endif
+	return l:mode_map[mode()]
+endfunction
+
+" assign these variables only when we enter a new buffer "
+augroup statusline_setup
 	au!
-	autocmd BufEnter * let file_type = CheckFileType()
+	autocmd BufEnter * let branch = BranchName()
+	autocmd BufEnter * let file_type = strlen(&ft) > 0 ? '  '.&ft.' ' : " text "
+	autocmd BufEnter * let readonly = (&readonly || !&modifiable) ? ' [] ' : ' '
 augroup end
-
-function! CheckFileType()
-	return strlen(&ft) > 0 ? &ft : "text"
-endfunction
-
-" display current mode "
-function! GetFullMode()
-	let mode_map = {'n': 'NORMAL', 'i': 'INSERT', 'R': 'REPLACE', 'v': 'VISUAL', 'V': 'V-LINE', "\<C-v>": 'V-BLOCK','c': 'COMMAND', 's': 'SELECT', 'S': 'S-LINE', "\<C-s>": 'S-BLOCK', 't': 'TERMINAL'}
-	return mode_map[mode()]
-endfunction
