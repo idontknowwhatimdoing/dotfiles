@@ -52,7 +52,7 @@ if !exists("g:syntax_on")
 	syntax enable
 endif
 set termguicolors
-colorscheme yep
+colorscheme ayu
 
 " status line "
 hi User1 ctermfg=black ctermbg=red
@@ -83,6 +83,8 @@ function! FullMode()
 		hi! User7 ctermfg=black ctermbg=darkyellow cterm=bold
 	elseif mode() == 'R'
 		hi! User7 ctermfg=black ctermbg=darkred cterm=bold
+	else
+		hi! User7 ctermfg=black ctermbg=darkblue cterm=bold
 	endif
 	return l:mode_map[mode()]
 endfunction

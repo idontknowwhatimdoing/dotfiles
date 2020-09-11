@@ -71,7 +71,7 @@ schemes:
 
     monokai-pro: &monokai
         primary:
-            background: '#212733'
+            background: '#0F1419'
             foreground: '#FCFCFA'
 
         normal:
@@ -85,7 +85,7 @@ schemes:
             white:   '#FCFCFA'
 
         bright:
-            black:   '#727072'
+            black:   '#0F1419'
             red:     '#FF6188'
             green:   '#A9DC76'
             yellow:  '#FFD866'
@@ -97,29 +97,9 @@ schemes:
 colors: *monokai
 draw_bold_text_with_bright_colors: true
 
-# Window dimensions in character columns and lines
-# (changes require restart)
-dimensions:
-columns: 120
-lines: 35
-
-# Background opacity
-# Window opacity as a floating point number from `0.0` to `1.0`.
-# The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 1.0
 
-# Window decorations
-# Values for `decorations`:
-#     - full: Borders and title bar
-#     - none: Neither borders nor title bar
 decorations: none
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: false
-
-# Startup Mode (changes require restart)
-# Values for `startup_mode`:
-#   - Windowed
-#   - Maximized
-#   - Fullscreen
-startup_mode: Maximized
+#env:
+#    TERM: alacritty-256colors
