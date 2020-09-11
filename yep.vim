@@ -1,14 +1,21 @@
-" Initialisation "
+" Initialisation:"{{{
+" ----------------------------------------------------------------------------
 hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let s:style = get(g:, 'ayucolor', 'mirage')
-let g:colors_name = "ayu"
 
-" Palettes "
+let s:style = get(g:, 'ayucolor', 'dark')
+let g:colors_name = "ayu"
+"}}}
+
+" Palettes:"{{{
+" ----------------------------------------------------------------------------
+
 let s:palette = {}
+
 let s:palette.bg        = {'dark': "#0F1419",  'light': "#FAFAFA",  'mirage': "#212733"}
+
 let s:palette.comment   = {'dark': "#5C6773",  'light': "#ABB0B6",  'mirage': "#5C6773"}
 let s:palette.markup    = {'dark': "#F07178",  'light': "#F07178",  'mirage': "#F07178"}
 let s:palette.constant  = {'dark': "#FFEE99",  'light': "#A37ACC",  'mirage': "#D4BFFF"}
@@ -19,6 +26,7 @@ let s:palette.string    = {'dark': "#B8CC52",  'light': "#86B300",  'mirage': "#
 let s:palette.function  = {'dark': "#FFB454",  'light': "#F29718",  'mirage': "#FFD57F"}
 let s:palette.special   = {'dark': "#E6B673",  'light': "#E6B673",  'mirage': "#FFC44C"}
 let s:palette.keyword   = {'dark': "#FF7733",  'light': "#FF7733",  'mirage': "#FFAE57"}
+
 let s:palette.error     = {'dark': "#FF3333",  'light': "#FF3333",  'mirage': "#FF3333"}
 let s:palette.accent    = {'dark': "#F29718",  'light': "#FF6A00",  'mirage': "#FFCC66"}
 let s:palette.panel     = {'dark': "#14191F",  'light': "#FFFFFF",  'mirage': "#272D38"}
@@ -28,7 +36,11 @@ let s:palette.selection = {'dark': "#253340",  'light': "#F0EEE4",  'mirage': "#
 let s:palette.fg        = {'dark': "#E6E1CF",  'light': "#5C6773",  'mirage': "#D9D7CE"}
 let s:palette.fg_idle   = {'dark': "#3E4B59",  'light': "#828C99",  'mirage': "#607080"}
 
-" Highlighting Primitives "
+"}}}
+
+" Highlighting Primitives:"{{{
+" ----------------------------------------------------------------------------
+
 function! s:build_prim(hi_elem, field)
   let l:vname = "s:" . a:hi_elem . "_" . a:field " s:bg_gray
   let l:gui_assign = "gui".a:hi_elem."=".s:palette[a:field][s:style] " guibg=...
@@ -41,8 +53,10 @@ for [key_name, d_value] in items(s:palette)
   call s:build_prim('bg', key_name)
   call s:build_prim('fg', key_name)
 endfor
+" }}}
 
-" Formatting Options "
+" Formatting Options:"{{{
+" ----------------------------------------------------------------------------
 let s:none   = "NONE"
 let s:t_none = "NONE"
 let s:n      = "NONE"
@@ -64,8 +78,11 @@ exe "let s:fmt_ital = ' gui=NONE".s:i.      " cterm=NONE".s:i.      " term=NONE"
 exe "let s:fmt_stnd = ' gui=NONE".s:s.      " cterm=NONE".s:s.      " term=NONE".s:s    ."'"
 exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
+"}}}
 
-" Vim Highlighting "
+
+" Vim Highlighting: (see :help highlight-groups)"{{{
+" ----------------------------------------------------------------------------
 exe "hi! Normal"        .s:fg_fg          .s:bg_bg          .s:fmt_none
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 " Conceal, Cursor, CursorIM
@@ -115,7 +132,10 @@ exe "hi! WarningMsg"    .s:fg_error       .s:bg_none        .s:fmt_none
 hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NONE        ctermbg=NONE        cterm=underline
 "   WildMenu"
 
-" Generic Syntax Highlighting "
+"}}}
+
+" Generic Syntax Highlighting: (see :help group-name)"{{{
+" ----------------------------------------------------------------------------
 exe "hi! Comment"         .s:fg_comment   .s:bg_none        .s:fmt_none
 
 exe "hi! Constant"        .s:fg_constant  .s:bg_none        .s:fmt_none
@@ -171,7 +191,64 @@ exe "hi! qfLineNr"        .s:fg_keyword   .s:bg_none        .s:fmt_none
 exe "hi! Conceal"         .s:fg_guide     .s:bg_none        .s:fmt_none
 exe "hi! CursorLineConceal" .s:fg_guide   .s:bg_line        .s:fmt_none
 
-" Diff Syntax Highlighting "
+
+" Terminal
+" ---------
+if has("nvim")
+  let g:terminal_color_0 =  s:palette.bg[s:style]
+  let g:terminal_color_1 =  s:palette.markup[s:style]
+  let g:terminal_color_2 =  s:palette.string[s:style]
+  let g:terminal_color_3 =  s:palette.accent[s:style]
+  let g:terminal_color_4 =  s:palette.tag[s:style]
+  let g:terminal_color_5 =  s:palette.constant[s:style]
+  let g:terminal_color_6 =  s:palette.regexp[s:style]
+  let g:terminal_color_7 =  "#FFFFFF"
+  let g:terminal_color_8 =  s:palette.fg_idle[s:style]
+  let g:terminal_color_9 =  s:palette.error[s:style]
+  let g:terminal_color_10 = s:palette.string[s:style]
+  let g:terminal_color_11 = s:palette.accent[s:style]
+  let g:terminal_color_12 = s:palette.tag[s:style]
+  let g:terminal_color_13 = s:palette.constant[s:style]
+  let g:terminal_color_14 = s:palette.regexp[s:style]
+  let g:terminal_color_15 = s:palette.comment[s:style]
+  let g:terminal_color_background = g:terminal_color_0
+  let g:terminal_color_foreground = s:palette.fg[s:style]
+else
+  let g:terminal_ansi_colors =  [s:palette.bg[s:style],      s:palette.markup[s:style]]
+  let g:terminal_ansi_colors += [s:palette.string[s:style],  s:palette.accent[s:style]]
+  let g:terminal_ansi_colors += [s:palette.tag[s:style],     s:palette.constant[s:style]]
+  let g:terminal_ansi_colors += [s:palette.regexp[s:style],  "#FFFFFF"]
+  let g:terminal_ansi_colors += [s:palette.fg_idle[s:style], s:palette.error[s:style]]
+  let g:terminal_ansi_colors += [s:palette.string[s:style],  s:palette.accent[s:style]]
+  let g:terminal_ansi_colors += [s:palette.tag[s:style],     s:palette.constant[s:style]]
+  let g:terminal_ansi_colors += [s:palette.regexp[s:style],  s:palette.comment[s:style]]
+endif
+
+
+" NerdTree
+" ---------
+exe "hi! NERDTreeOpenable"          .s:fg_fg_idle     .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_accent      .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarksLeader"   .s:fg_bg          .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeBookmarkName"      .s:fg_keyword     .s:bg_none        .s:fmt_none
+" exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_fg_idle    .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDir"               .s:fg_function   .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeFile"              .s:fg_none       .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDirSlash"          .s:fg_accent     .s:bg_none        .s:fmt_none
+
+
+" GitGutter
+" ---------
+exe "hi! GitGutterAdd"          .s:fg_string     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChange"       .s:fg_tag        .s:bg_none        .s:fmt_none
+exe "hi! GitGutterDelete"       .s:fg_markup     .s:bg_none        .s:fmt_none
+exe "hi! GitGutterChangeDelete" .s:fg_function   .s:bg_none        .s:fmt_none
+
+"}}}
+
+" Diff Syntax Highlighting:"{{{
 " ----------------------------------------------------------------------------
 " Diff
 "   diffOldFile
@@ -191,4 +268,10 @@ hi! link diffAdded String
 "   diffSubname
 "   diffComment
 
+"}}}
+"
+" This is needed for some reason: {{{
+
 let &background = s:style
+
+" }}}

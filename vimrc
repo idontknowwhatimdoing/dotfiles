@@ -55,7 +55,7 @@ if !exists("g:syntax_on")
 	syntax enable
 endif
 set termguicolors
-colorscheme ayu
+colorscheme yep
 
 " status line "
 hi User1 ctermfg=black ctermbg=red
