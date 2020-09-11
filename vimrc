@@ -10,6 +10,7 @@ set noswapfile
 set lazyredraw
 set ttyfast
 set nomodeline
+set path+=**
 
 " indentation and wrapping "
 set shiftwidth=4
@@ -29,9 +30,7 @@ set ignorecase
 " UI "
 set laststatus=2
 set wildmenu
-set path+=**
 set showcmd
-set number
 set noshowmode
 
 " file browsing "
@@ -42,6 +41,10 @@ let g:netrw_liststyle=3
 map Y y$
 map 0 ^
 nnoremap <C-L> :nohl<CR>
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O

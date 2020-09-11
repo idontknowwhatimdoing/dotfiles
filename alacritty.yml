@@ -1,105 +1,44 @@
-# Font configuration (changes require restart)
+padding:
+    x: 100
+    y: 100
+
 font:
-    # Style can be specified to pick a specific face.
-  normal:
-      #family: IBM Plex Mono
-    family: Hack
-      #family: Fira Code
+    normal:
+        family: Hack
 
-  bold:
-      #family: IBM Plex Mono
-    family: Hack
-    #family: Fira Code
+    bold:
+        family: Hack
 
-  italic:
-      #family: IBM Plex Mono
-    family: Hack
-      #family: Fira Code
+    italic:
+        family: Hack
 
-  size: 12
+    size: 12
 
-schemes:
-    ayu-mirage: &ayu
-        primary:
-            background: '#202734'
-            foreground: '#CBCCC6'
+colors:
+    primary:
+        background: '#0F1419'
+        foreground: '#FCFCFA'
 
-        normal:
-            black: '#191E2A'
-            red: '#FF3333'
-            green: '#BAE67E'
-            yellow: '#FFA759'
-            blue: '#73D0FF'
-            magenta: '#FFD580'
-            cyan: '#95E6CB'
-            white: '#C7C7C7'
+    normal:
+        black:   '#403E41'
+        red:     '#FF6188'
+        green:   '#A9DC76'
+        yellow:  '#FFD866'
+        blue:    '#FC9867'
+        magenta: '#AB9DF2'
+        cyan:    '#78DCE8'
+        white:   '#FCFCFA'
 
-        bright:
-            black: '#686868'
-            red: '#F27983'
-            green: '#A6CC70'
-            yellow: '#FFCC66'
-            blue: '#5CCFE6'
-            magenta: '#FFEE99'
-            cyan: '#95E6CB'
-            white: '#FFFFFF'
-   
-    one-dark: &one 
-        primary:
-            background: '#282c34'
-            foreground: '#abb2bf'
+    bright:
+        black:   '#0F1419'
+        red:     '#FF6188'
+        green:   '#A9DC76'
+        yellow:  '#FFD866'
+        blue:    '#FC9867'
+        magenta: '#AB9DF2'
+        cyan:    '#78DCE8'
+        white:   '#FCFCFA'
 
-        normal:
-            black:   '#282c34'
-            red:     '#e06c75'
-            green:   '#98c379'
-            yellow:  '#d19a66'
-            blue:    '#61afef'
-            magenta: '#c678dd'
-            cyan:    '#56b6c2'
-            white:   '#abb2bf'
-
-        bright:
-             black:   '#5c6370'
-             red:     '#e06c75'
-             green:   '#98c379'
-             yellow:  '#d19a66'
-             blue:    '#61afef'
-             magenta: '#c678dd'
-             cyan:    '#56b6c2'
-             white:   '#ffffff'
-
-    monokai-pro: &monokai
-        primary:
-            background: '#0F1419'
-            foreground: '#FCFCFA'
-
-        normal:
-            black:   '#403E41'
-            red:     '#FF6188'
-            green:   '#A9DC76'
-            yellow:  '#FFD866'
-            blue:    '#FC9867'
-            magenta: '#AB9DF2'
-            cyan:    '#78DCE8'
-            white:   '#FCFCFA'
-
-        bright:
-            black:   '#0F1419'
-            red:     '#FF6188'
-            green:   '#A9DC76'
-            yellow:  '#FFD866'
-            blue:    '#FC9867'
-            magenta: '#AB9DF2'
-            cyan:    '#78DCE8'
-            white:   '#FCFCFA'
-
-colors: *monokai
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 1.0
-
 decorations: none
-
-#env:
-#    TERM: alacritty-256colors
