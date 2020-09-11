@@ -1,24 +1,21 @@
-padding:
-    x: 100
-    y: 100
+window:
+    padding:
+        x: 0
+        y: 0
+    decorations: none
+    startup_mode: Maximized
+    dynamic_title: false
+    history: 500
 
 font:
     normal:
         family: Hack
-
-    bold:
-        family: Hack
-
-    italic:
-        family: Hack
-
     size: 12
 
 colors:
     primary:
         background: '#0F1419'
         foreground: '#FCFCFA'
-
     normal:
         black:   '#403E41'
         red:     '#FF6188'
@@ -28,7 +25,6 @@ colors:
         magenta: '#AB9DF2'
         cyan:    '#78DCE8'
         white:   '#FCFCFA'
-
     bright:
         black:   '#0F1419'
         red:     '#FF6188'
@@ -38,7 +34,4 @@ colors:
         magenta: '#AB9DF2'
         cyan:    '#78DCE8'
         white:   '#FCFCFA'
-
 draw_bold_text_with_bright_colors: true
-
-decorations: none
