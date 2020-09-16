@@ -35,6 +35,10 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+nnoremap <C-Left> :vertical resize -2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>n
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
@@ -48,7 +52,7 @@ colorscheme yep
 hi User1 guifg=black guibg=#FF6188
 hi User3 guifg=black guibg=#FC9867
 hi User4 guifg=black guibg=#FFD866
-hi User6 guifg=black guibg=#FFABCD
+hi User6 guifg=black guibg=#FFAB22
 
 " get the current git branch if it exists "
 function! BranchName()
@@ -89,7 +93,7 @@ function! Test()
 endfunction
 
 function! Test2()
-	return "%#StatuslineNC#%{BranchName()}\ %F%{&modified?'[+]':''}%{Readonly()}%{FileType()}\ c:%c\ %LL\  "
+	return "%#StatuslineNC#%{BranchName()}\ %F%{&modified?'[+]':''}%{Readonly()}%=%{FileType()}\ c:%c\ %LL\  "
 endfunction
 
 augroup yepcock
