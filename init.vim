@@ -1,37 +1,26 @@
 " general settings "
-set nocompatible
-filetype plugin indent on
-set backspace=indent,eol,start
-set autoread
 set hidden
 set nostartofline
-set encoding=utf-8
 set noswapfile
 "set lazyredraw (breaks the statusline at startup)
-set ttyfast
 set nomodeline
 set path+=**
+set history=500
 
 " indentation and wrapping "
 set shiftwidth=4
 set tabstop=4
-set autoindent
 set smartindent
 set wrap
 set linebreak
 set breakindent
 
 " better searching "
-set hlsearch
-set incsearch
 set smartcase
 set ignorecase
 
 " UI "
 set number
-set laststatus=2
-set wildmenu
-set showcmd
 set noshowmode
 
 " file browsing "
@@ -51,18 +40,15 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
 
 " color theme "
-if !exists("g:syntax_on")
-	syntax enable
-endif
+syntax on
 set termguicolors
 colorscheme yep
 
 " status line "
-hi User1 ctermfg=black ctermbg=red
-hi User3 ctermfg=black ctermbg=blue
-hi User4 ctermfg=black ctermbg=yellow
-hi User6 ctermfg=black ctermbg=yellow
-hi User7 ctermfg=black ctermbg=darkmagenta cterm=bold
+hi User1 guifg=black guibg=#FF6188
+hi User3 guifg=black guibg=#FC9867
+hi User4 guifg=black guibg=#FFD866
+hi User6 guifg=black guibg=#FFABCD
 
 " get the current git branch if it exists "
 function! BranchName()
@@ -75,17 +61,17 @@ function! FullMode()
 	let l:mode_map = {'n': '  NORMAL ', 'i': '  INSERT ', 'R': '  REPLACE ', 'v': '  VISUAL ', 'V': '  V-LINE ', "\<C-v>": '  V-BLOCK ','c': '  COMMAND ', 's': '  SELECT ', 'S': '  S-LINE ', "\<C-s>": '  S-BLOCK ', 't': '  TERMINAL '}
 	let l:cur = mode()
 	if l:cur == 'n'
-		hi User7 ctermfg=black ctermbg=darkmagenta cterm=bold
+		hi! User7 guifg=black guibg=#AB9DF2 gui=bold
 	elseif l:cur == 'i'
-		hi User7 ctermfg=black ctermbg=darkgreen cterm=bold
+		hi! User7 guifg=black guibg=#A9DC76 gui=bold
 	elseif l:cur == 'v' || l:cur == 'V' || l:cur == "\<C-v>"
-		hi User7 ctermfg=black ctermbg=lightblue cterm=bold
+		hi! User7 guifg=black guibg=lightblue gui=bold
 	elseif l:cur == 's' || l:cur == 'S' || l:cur == "\<C-s>"
-		hi User7 ctermfg=black ctermbg=darkyellow cterm=bold
+		hi! User7 guifg=black guibg=darkyellow gui=bold
 	elseif l:cur == 'R'
-		hi User7 ctermfg=black ctermbg=darkred cterm=bold
+		hi! User7 guifg=black guibg=#FF6188 gui=bold
 	else
-		hi User7 ctermfg=black ctermbg=05 cterm=bold
+		hi! User7 guifg=black guibg=#AB9DF2 gui=bold
 	endif
 	return l:mode_map[l:cur]
 endfunction
@@ -103,7 +89,7 @@ function! Test()
 endfunction
 
 function! Test2()
-	return "%6*%{BranchName()}%3*\ %F%{&modified?'[+]':''}%{Readonly()}%#StatusLine#%=%1*%{FileType()}%4*\ c:%c\ %LL\  "
+	return "%#StatuslineNC#%{BranchName()}\ %F%{&modified?'[+]':''}%{Readonly()}%{FileType()}\ c:%c\ %LL\  "
 endfunction
 
 augroup yepcock
