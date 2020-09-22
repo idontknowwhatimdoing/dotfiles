@@ -1,15 +1,19 @@
+env:
+  TERM: xterm-256color
+
 window:
     padding:
-        x: 0
-        y: 0
-    decorations: none
-    startup_mode: Maximized
+        x: 5
+        y: 5
+    #decorations: none
+    #startup_mode: Maximized
     dynamic_title: false
     history: 500
 
 font:
     normal:
-        family: Hack
+        family: FuraMono Nerd Font Mono
+        #family: Hack Nerd Font Mono
     size: 12
 
 colors:
@@ -17,21 +21,31 @@ colors:
         background: '#0F1419'
         foreground: '#FCFCFA'
     normal:
-        black:   '#403E41'
-        red:     '#FF6188'
-        green:   '#A9DC76'
+        black:   '#0F1419'
+        red:     '#FC7367'
+        #red:     '#FF6188'
+        green:   '#67FC98'
+        #green:   '#A9DC76'
         yellow:  '#FFD866'
-        blue:    '#FC9867'
-        magenta: '#AB9DF2'
-        cyan:    '#78DCE8'
+        blue:    '#FC8F67'
+        #blue:    '#FC9867'
+        magenta: '#E267FC'
+        #magenta: '#AB9DF2'
+        cyan:    '#67CBFC'
+        #cyan:    '#78DCE8'
         white:   '#FCFCFA'
     bright:
         black:   '#0F1419'
-        red:     '#FF6188'
-        green:   '#A9DC76'
+        red:     '#FC7367'
+        #red:     '#FF6188'
+        green:   '#67FC98'
+        #green:   '#A9DC76'
         yellow:  '#FFD866'
-        blue:    '#FC9867'
-        magenta: '#AB9DF2'
-        cyan:    '#78DCE8'
+        blue:    '#FC8F67'
+        #blue:    '#FC9867'
+        magenta: '#E267FC'
+        #magenta: '#AB9DF2'
+        cyan:    '#67CBFC'
+        #cyan:    '#78DCE8'
         white:   '#FCFCFA'
 draw_bold_text_with_bright_colors: true

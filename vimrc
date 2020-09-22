@@ -58,11 +58,19 @@ set termguicolors
 colorscheme yep
 
 " status line "
-hi User1 ctermfg=black ctermbg=red
-hi User3 ctermfg=black ctermbg=blue
-hi User4 ctermfg=black ctermbg=yellow
-hi User6 ctermfg=black ctermbg=yellow
-hi User7 ctermfg=black ctermbg=darkmagenta cterm=bold
+if has("nvim")
+	hi User1 guibg=black guifg=#FF6188
+	hi User3 guibg=black guifg=#FC9867
+	hi User4 guibg=black guifg=#FFD866
+	hi User6 guibg=black guifg=#FFD866
+	hi User7 guibg=black guifg=#AB9DF2 gui=bold
+else
+	hi User1 ctermfg=black ctermbg=red
+	hi User3 ctermfg=black ctermbg=blue
+	hi User4 ctermfg=black ctermbg=yellow
+	hi User6 ctermfg=black ctermbg=yellow
+	hi User7 ctermfg=black ctermbg=magenta cterm=bold
+endif
 
 " get the current git branch if it exists "
 function! BranchName()
@@ -70,24 +78,10 @@ function! BranchName()
 	return strlen(l:branchname) > 0 ? '  '.l:branchname.' ' : ''
 endfunction
 
-" get the full name of the current mode and updates the color "
+" get the full name of the current mode "
 function! FullMode()
 	let l:mode_map = {'n': '  NORMAL ', 'i': '  INSERT ', 'R': '  REPLACE ', 'v': '  VISUAL ', 'V': '  V-LINE ', "\<C-v>": '  V-BLOCK ','c': '  COMMAND ', 's': '  SELECT ', 'S': '  S-LINE ', "\<C-s>": '  S-BLOCK ', 't': '  TERMINAL '}
-	let l:cur = mode()
-	if l:cur == 'n'
-		hi User7 ctermfg=black ctermbg=darkmagenta cterm=bold
-	elseif l:cur == 'i'
-		hi User7 ctermfg=black ctermbg=darkgreen cterm=bold
-	elseif l:cur == 'v' || l:cur == 'V' || l:cur == "\<C-v>"
-		hi User7 ctermfg=black ctermbg=lightblue cterm=bold
-	elseif l:cur == 's' || l:cur == 'S' || l:cur == "\<C-s>"
-		hi User7 ctermfg=black ctermbg=darkyellow cterm=bold
-	elseif l:cur == 'R'
-		hi User7 ctermfg=black ctermbg=darkred cterm=bold
-	else
-		hi User7 ctermfg=black ctermbg=05 cterm=bold
-	endif
-	return l:mode_map[l:cur]
+	return l:mode_map[mode()]
 endfunction
 
 function! FileType()
@@ -98,16 +92,12 @@ function! Readonly()
 	return (&readonly || !&modifiable) ? ' [] ' : ' '
 endfunction
 
-function! Test()
-	return "%7*%{FullMode()}%6*%{BranchName()}%3*\ %F%{&modified?'[+]':''}%{Readonly()}%#StatusLine#%=%1*%{FileType()}%4*\ c:%c\ %LL\  "
-endfunction
-
-function! Test2()
-	return "%6*%{BranchName()}%3*\ %F%{&modified?'[+]':''}%{Readonly()}%#StatusLine#%=%1*%{FileType()}%4*\ c:%c\ %LL\  "
+function! StatusLine(is_active)
+	return a:is_active == 'yes' ? "%7*%{FullMode()}%6*%{BranchName()}%3*\ %F%{&modified?'[+]':''}%{Readonly()}%#StatusLine#%=%1*%{FileType()}%4*\ c:%c\ %LL\ " : "%6*%{BranchName()}%3*\ %F%{&modified?'[+]':''}%{Readonly()}%#StatusLine#%=%1*%{FileType()}%4*\ c:%c\ %LL\ "
 endfunction
 
 augroup yepcock
 	au!
-	autocmd WinEnter,BufEnter * setlocal statusline=%!Test()
-	autocmd WinLeave * setlocal statusline=%!Test2()
+	autocmd WinEnter,BufEnter * setlocal statusline=%!StatusLine('yes')
+	autocmd WinLeave * setlocal statusline=%!StatusLine('no')
 augroup end
