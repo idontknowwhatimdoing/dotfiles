@@ -12,8 +12,8 @@ window:
 
 font:
     normal:
-        family: FuraMono Nerd Font Mono
-        #family: Hack Nerd Font Mono
+        family: FuraMono Nerd Font 
+        #family: Hack Nerd Font
     size: 12
 
 colors:
@@ -22,30 +22,19 @@ colors:
         foreground: '#FCFCFA'
     normal:
         black:   '#0F1419'
-        red:     '#FC7367'
-        #red:     '#FF6188'
-        green:   '#67FC98'
-        #green:   '#A9DC76'
+        red:     '#FC6A67'
+        green:   '#89FC67'
         yellow:  '#FFD866'
         blue:    '#FC8F67'
-        #blue:    '#FC9867'
-        magenta: '#E267FC'
-        #magenta: '#AB9DF2'
-        cyan:    '#67CBFC'
-        #cyan:    '#78DCE8'
+        magenta: '#D967FC'
+        cyan:    '#67D4FC'
         white:   '#FCFCFA'
     bright:
         black:   '#0F1419'
-        red:     '#FC7367'
-        #red:     '#FF6188'
-        green:   '#67FC98'
-        #green:   '#A9DC76'
+        red:     '#FC6A67'
+        green:   '#89FC67'
         yellow:  '#FFD866'
         blue:    '#FC8F67'
-        #blue:    '#FC9867'
-        magenta: '#E267FC'
-        #magenta: '#AB9DF2'
-        cyan:    '#67CBFC'
-        #cyan:    '#78DCE8'
+        magenta: '#D967FC'
+        cyan:    '#67D4FC'
         white:   '#FCFCFA'
-draw_bold_text_with_bright_colors: true
