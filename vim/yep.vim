@@ -4,7 +4,6 @@ if exists("syntax_on")
 endif
 
 set background=dark
-
 function SetHighlightGroup(group, ...)
 	let hi_grp = 'hi ' . a:group . ' '
 
@@ -42,8 +41,8 @@ call SetHighlightGroup("MatchParen", "#FFD866", "#0F1419", "underline")
 call SetHighlightGroup("ModeMsg", "#89FC67", "NONE")
 call SetHighlightGroup("MoreMsg", "#89FC67", "NONE")
 call SetHighlightGroup("NonText", "#5A5A59", "NONE")
-call SetHighlightGroup("Pmenu", "#FCFCFA", "#5A5A59")
-call SetHighlightGroup("Pmenu", "#FCFCFA", "#5A5A59", "reverse")
+call SetHighlightGroup("Pmenu", "#FCFCFA", "#1D2730")
+call SetHighlightGroup("PmenuSel", "#1D2730", "#FC6A67", "bold")
 call SetHighlightGroup("Question", "#89FC67", "NONE")
 call SetHighlightGroup("Search", "#0F1419", "#FC8F67")
 call SetHighlightGroup("SpecialKey", "#5A5A59", "NONE")
@@ -54,7 +53,9 @@ call SetHighlightGroup("SpellRare", "#89FC67", "NONE", "underline")
 call SetHighlightGroup("StatusLine", "#1D2730", "#FCFCFA")
 call SetHighlightGroup("StatusLineNC", "#1D2730", "#FCFCFA")
 call SetHighlightGroup("WildMenu", "#0F1419", "#FC6A67")
-call SetHighlightGroup("TabLine", "#FCFCFA", "#1D2730", "reverse")
+call SetHighlightGroup("TabLine", "#1D2730", "#FCFCFA", "reverse")
+call SetHighlightGroup("TabLineSel", "#FFD866", "#0F1419")
+call SetHighlightGroup("TabLineFill", "#1D2730", "NONE")
 call SetHighlightGroup("Title", "#FC8F67", "NONE")
 call SetHighlightGroup("Visual", "NONE", "#1D2730")
 call SetHighlightGroup("WarningMsg", "#FC6A67", "NONE")
