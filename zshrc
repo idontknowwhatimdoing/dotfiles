@@ -24,9 +24,7 @@ precmd() { vcs_info }
 setopt COMPLETE_ALIASES
 setopt PROMPT_SUBST
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr " %F{red}!%f"
-zstyle ':vcs_info:*' formats "%F{yellow}%b%f%u "
+zstyle ':vcs_info:*' formats "%F{yellow}%b%f "
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 bindkey '\e[A' history-search-backward

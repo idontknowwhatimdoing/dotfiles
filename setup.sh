@@ -12,11 +12,11 @@ ln -f vim/yep.vim ~/.config/nvim/colors/yep.vim
 ln -f vim/vimrc ~/.vimrc
 
 mkdir -p ~/.config/i3
-ln -f i3.conf ~/.config/i3/config
+ln -f i3/config ~/.config/i3/config
 
 mkdir -p ~/.config/polybar
 mkdir -p ~/.config/polybar/scripts
-ln -f polybar/polybar.conf ~/.config/polybar/config
+ln -f polybar/config ~/.config/polybar/config
 ln -f polybar/check-updates.sh ~/.config/polybar/scripts/check_updates.sh
 ln -f polybar/launch.sh ~/.config/polybar/scripts/launch.sh
 

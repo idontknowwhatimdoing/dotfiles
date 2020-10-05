@@ -89,7 +89,7 @@ function! Readonly()
 endfunction
 
 function Modified()
-	return &modified ? ' [+]' : ''
+	return &modified ? '[+]' : ''
 endfunction
 
 function! StatusLine(is_active)
