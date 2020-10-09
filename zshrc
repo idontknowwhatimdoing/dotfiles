@@ -41,6 +41,7 @@ alias grep='grep --color '
 alias vim=nvim
 alias vi=nvim
 alias tmux='tmux -f ~/.config/tmux/tmux.conf '
+alias menfou="git add . ; git commit -m 'yep cock' ; git push"
 
 export EDITOR=nvim
 export VISUAL=nvim
