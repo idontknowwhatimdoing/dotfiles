@@ -17,7 +17,7 @@ foreground = #FCFCFA
 line-size = 5
 modules-left = i3
 modules-center = datetime
-modules-right = updates battery alsa xbacklight network 
+modules-right = updates battery audio xbacklight network 
 
 [module/datetime]
 type = internal/date
@@ -77,8 +77,8 @@ format-connected = <label-connected>
 label-disconnected = 睊
 label-disconnected-underline = #FC8F67
 
-[module/alsa]
-type = internal/alsa
+[module/audio]
+type = internal/pulseaudio
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
