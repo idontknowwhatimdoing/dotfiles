@@ -49,7 +49,8 @@ nnoremap <C-Up> :res +2<CR>
 nnoremap <C-Down> :res -2<CR>
 nnoremap <C-Left> :vertical res -2<CR>
 nnoremap <C-Right> :vertical res +2<CR>
-nnoremap <Tab> :tabn<CR>
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
 nnoremap <C-q> :noh<CR>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap [<CR> [<CR>]<Esc>O

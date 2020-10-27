@@ -180,6 +180,6 @@ prompt {
 textbox-prompt-colon {
     margin:     0px 0.3000em 0.0000em 0.0000em ;
     expand:     false;
-    str:        "";
+    str:        "❯";
     text-color: inherit;
 }

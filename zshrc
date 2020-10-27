@@ -45,6 +45,5 @@ alias menfou="git add . ; git commit -m 'yep cock' ; git push"
 
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH=$PATH:/home/yep/.cargo/bin
 export KEYTIMEOUT=1
 export PROMPT='%B%F{cyan}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '

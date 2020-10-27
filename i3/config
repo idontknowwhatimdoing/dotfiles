@@ -90,10 +90,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+b exec firefox
 
 # borders
-default_border pixel 5
+default_border pixel 3
 smart_borders on
-bindsym $mod+t border none
-bindsym $mod+Shift+t border pixel 5
 client.focused #ffffff #285577 #ffffff #fc8f67 #fc8f67
 client.focused_inactive #333333 #5f676a #ffffff #5f676a #5f676a
 
