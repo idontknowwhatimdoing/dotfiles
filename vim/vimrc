@@ -10,7 +10,7 @@ set noswapfile
 "set lazyredraw (breaks the statusline at startup)
 set ttyfast
 set nomodeline
-set path+=**
+set path=.,,**
 
 " indentation and wrapping "
 set shiftwidth=4
