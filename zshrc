@@ -24,7 +24,7 @@ precmd() { vcs_info }
 setopt COMPLETE_ALIASES
 setopt PROMPT_SUBST
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats "%F{yellow}%b%f "
+zstyle ':vcs_info:*' formats "%F{blue}%b%f "
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 bindkey '\e[A' history-search-backward
@@ -46,4 +46,4 @@ alias menfou="git add . ; git commit -m 'yep cock' ; git push"
 export EDITOR=nvim
 export VISUAL=nvim
 export KEYTIMEOUT=1
-export PROMPT='%B%F{cyan}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
+export PROMPT='%B%F{yellow}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
