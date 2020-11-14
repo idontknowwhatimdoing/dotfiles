@@ -1,8 +1,7 @@
 #! /bin/bash
 ln -f ~/.config/alacritty/alacritty.yml alacritty.yml
 
-ln -f ~/.config/i3/config i3/config
-ln -f ~/.config/i3/rng-bg.sh i3/rng-bg.sh
+ln -f ~/.config/i3/config i3.conf
 
 ln -f ~/.config/polybar/config polybar/config
 ln -f ~/.config/polybar/scripts/launch.sh polybar/launch.sh
