@@ -30,6 +30,7 @@ zstyle ':completion::complete:*' gain-privileges 1
 bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
 zmodload zsh/complist
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -42,6 +43,7 @@ alias vim=nvim
 alias vi=nvim
 alias tmux='tmux -f ~/.config/tmux/tmux.conf '
 alias menfou="git add . ; git commit -m 'yep cock' ; git push"
+alias cl='clang -Wall -Werror -Wextra '
 
 export EDITOR=nvim
 export VISUAL=nvim
