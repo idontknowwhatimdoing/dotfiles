@@ -43,7 +43,8 @@ alias vim=nvim
 alias vi=nvim
 alias tmux='tmux -f ~/.config/tmux/tmux.conf '
 alias menfou="git add . ; git commit -m 'yep cock' ; git push"
-alias cl='clang -Wall -Werror -Wextra '
+alias cl='clang -Wall -Werror -Wextra -fsanitize=address '
+alias valcheck='valgrind --leak-check=full --show-leak-kinds=all'
 
 export EDITOR=nvim
 export VISUAL=nvim
