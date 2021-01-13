@@ -37,14 +37,14 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-alias ls='ls --color=auto '
-alias grep='grep --color '
+alias ls='ls --color=auto'
+alias grep='grep --color'
 alias vim=nvim
 alias vi=nvim
-alias tmux='tmux -f ~/.config/tmux/tmux.conf '
+alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 alias menfou="git add . ; git commit -m 'yep cock' ; git push"
-alias gcw='gcc -Wall -Werror -Wextra -g -O0 '
-alias valcheck='valgrind --leak-check=full --show-leak-kinds=all '
+alias gcw='gcc -Wall -Werror -Wextra -g -O0'
+alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
 
 export BROWSER=firefox
 export EDITOR=nvim
