@@ -42,8 +42,8 @@ alias grep='grep --color'
 alias vim=nvim
 alias vi=nvim
 alias tmux='tmux -f ~/.config/tmux/tmux.conf'
-alias menfou="git add . ; git commit -m 'yep cock' ; git push"
-alias gcw='gcc -Wall -Werror -Wextra -g -O0'
+alias menfou="git add . ; git commit -m 'menfou' ; git push"
+alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
 alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
 
 export BROWSER=firefox

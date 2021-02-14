@@ -24,3 +24,7 @@ ln -f zshrc ~/.zshrc
 mkdir -p ~/.config/rofi
 ln -f rofi/config.rasi ~/.config/rofi/config.rasi
 ln -f rofi/yep.rasi ~/.config/rofi/yep.rasi
+
+sudo ln -f xorg/10-monitor.conf /etc/X11/xorg.conf.d
+sudo ln -f xorg/30-mouse.conf /etc/X11/xorg.conf.d
+sudo ln -f xorg/30-touchpad.conf /etc/X11/xorg.conf.d
