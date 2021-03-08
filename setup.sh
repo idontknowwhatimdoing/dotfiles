@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+
 mkdir -p ~/.config/alacritty
 ln -f alacritty.yml ~/.config/alacritty/alacritty.yml
 
@@ -19,8 +20,11 @@ mkdir -p ~/.config/polybar/scripts
 ln -f polybar/check-updates.sh ~/.config/polybar/scripts/check_updates.sh
 ln -f polybar/launch.sh ~/.config/polybar/scripts/launch.sh
 
-ln -f zshrc ~/.zshrc
+ln -f zsh/zshrc ~/.zshrc
+ln -f zsh/zprofile ~/.zprofile
 
 mkdir -p ~/.config/rofi
 ln -f rofi/config.rasi ~/.config/rofi/config.rasi
 ln -f rofi/yep.rasi ~/.config/rofi/yep.rasi
+
+ln -f xorg/xinitrc ~/.xinitrc

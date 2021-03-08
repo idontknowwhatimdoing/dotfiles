@@ -1,0 +1,8 @@
+i3
+zsh
+tmux
+rofi
+neovim
+polybar
+alacritty
+rofi-calc
