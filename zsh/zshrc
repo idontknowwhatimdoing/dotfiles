@@ -45,6 +45,10 @@ alias tmux='tmux -f ~/.config/tmux/tmux.conf'
 alias menfou="git add . ; git commit -m 'menfou' ; git push"
 alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
 alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
+alias norm=norminette
+alias date='date +%A'
+alias make='make -s'
+alias nc=ncat;
 
 export BROWSER=firefox
 export EDITOR=nvim

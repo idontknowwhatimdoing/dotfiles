@@ -28,3 +28,4 @@ ln -f rofi/config.rasi ~/.config/rofi/config.rasi
 ln -f rofi/yep.rasi ~/.config/rofi/yep.rasi
 
 ln -f xorg/xinitrc ~/.xinitrc
+sudo cp xorg/*.conf /etc/X11/xorg.conf.d
