@@ -2,11 +2,11 @@
 
 cd /opt
 sudo git clone https://aur.archlinux.org/yay-git.git yay
-sudo chown -R $USER:wheel ./yay
+sudo chown -R $USER:wheel yay
 cd yay
 makepkg -si
 
-yay -S --needed - < pkglist.txt
+yay -S --needed - < ~/.dotfiles/pkglist.txt
 
 mkdir -p ~/downloads
 cd ~/downloads
@@ -16,5 +16,5 @@ rm -rf FiraMono.zip *Windows*
 sudo mkdir -p /usr/share/fonts/FiraMono
 sudo mv * /usr/share/fonts/FiraMono
 
-cd
+cd ~/.dotfiles
 ./setup.sh

@@ -14,7 +14,7 @@ font:
     normal:
         family: FuraMono Nerd Font 
         #family: Hack Nerd Font
-    size: 12
+    size: 14
 
 colors:
     primary:

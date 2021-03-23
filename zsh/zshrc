@@ -46,12 +46,18 @@ alias menfou="git add . ; git commit -m 'menfou' ; git push"
 alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
 alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
 alias norm=norminette
-alias date='date +%A'
 alias make='make -s'
-alias nc=ncat;
+alias nc=ncat
+alias ip='ip -color'
 
-export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 export KEYTIMEOUT=1
 export PROMPT='%B%F{yellow}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
+export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;31m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;33m'

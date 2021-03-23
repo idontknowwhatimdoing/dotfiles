@@ -1,3 +1,5 @@
+vi
+git
 zsh
 feh
 tmux
@@ -9,11 +11,15 @@ polybar
 i3-gaps
 alacritty
 rofi-calc
+xorg-xset
+alsa-utils
 pulseaudio
+noto-fonts
 xorg-xinit
 xorg-server
 xorg-xinput
 sof-firmware
+xorg-setxkbmap
 pacman-contrib
 xorg-xbacklight
 xf86-video-vesa
