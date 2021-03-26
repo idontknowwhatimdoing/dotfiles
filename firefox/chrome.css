@@ -1,0 +1,21 @@
+@import "global/variables.css";
+@import "global/global.css";
+@import "icons/icons.css";
+@import "tabbar/tabbar.css";
+@import "navbar/navbar.css";
+@import "personalbar/personalbar.css";
+@import "popup/popup.css";
+@import "urlbar/urlbar.css";
+@import "findbar/findbar.css";
+
+/********************************
+    Personal Changes 
+********************************/
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+  transform: scale(1, 1) !important;
+  opacity:1 !important;
+  margin-left:0 !important;
+  pointer-events: auto !important;
+}
