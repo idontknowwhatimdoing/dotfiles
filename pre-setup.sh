@@ -14,7 +14,7 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.z
 unzip FiraMono.zip
 rm -rf FiraMono.zip *Windows*
 sudo mkdir -p /usr/share/fonts/FiraMono
-sudo mv * /usr/share/fonts/FiraMono
+sudo mv *.otf /usr/share/fonts/FiraMono
 
 cd ~/.dotfiles
 ./setup.sh
