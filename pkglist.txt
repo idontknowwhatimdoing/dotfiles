@@ -1,12 +1,14 @@
 vi
 git
 zsh
+fzf
 feh
 tmux
 rofi
 wget
 unzip
 neovim
+ripgrep
 polybar
 i3-gaps
 alacritty

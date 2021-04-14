@@ -26,3 +26,8 @@ ln -f rofi/yep.rasi ~/.config/rofi/yep.rasi
 
 ln -f xorg/xinitrc ~/.xinitrc
 sudo cp xorg/*.conf /etc/X11/xorg.conf.d
+
+dir=$(find ~/.mozilla/firefox -type d -iregex ".*default-release")
+mkdir -p $dir/chrome
+cp firefox/user.js $dir
+cp -r firefox/* $dir/chrome

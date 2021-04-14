@@ -19,6 +19,14 @@ unsetopt beep nomatch
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+function vf() {
+	f=$(fzf | tr '\n' ' ')
+	if [[ -z "$f" ]]; then
+		return
+	fi
+	nvim -p $(echo $f)
+}
+
 autoload -Uz vcs_info
 precmd() { vcs_info }
 setopt COMPLETE_ALIASES
@@ -31,19 +39,12 @@ bindkey '\e[A' history-search-backward
 bindkey '\e[B' history-search-forward
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey -s '^F' 'vf\n'
 zmodload zsh/complist
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
-
-function vf() {
-	f=$(fzf | tr '\n' ' ')
-	if [[ -z "$f" ]]; then
-		return
-	fi
-	nvim -p $(echo $f)
-}
 
 alias ls='ls --color=auto'
 alias grep='grep --color'
@@ -71,6 +72,6 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;33m'
 #export BAT_THEME="ansi"
 export FZF_DEFAULT_COMMAND='rg -i --hidden --files'
-export FZF_DEFAULT_OPTS="-m --height 50% --prompt='❯ ' --border=sharp \
+export FZF_DEFAULT_OPTS="-m --margin=20% --prompt='❯ ' --border=sharp \
 	--color='fg:#FFD866,fg+:#FC8F67,bg:#0F1419,bg+:#0F1419,info:#D967FC,border:#FC8F67,prompt:#FC6A67' \
 	--color='query:#FC6A67,pointer:#FC8F67,marker:#FC8F67,hl:#FC6A67,hl+:#FC6A67'"
