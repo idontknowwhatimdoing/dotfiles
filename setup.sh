@@ -10,6 +10,8 @@ mkdir -p ~/.config/nvim/colors
 ln -f nvim/init.vim ~/.config/nvim
 ln -f nvim/yep.vim ~/.config/nvim/colors
 ln -f nvim/plugins.vim ~/.config/nvim
+mkdir -p ~/.local/share/nvim/site/pack/$USER/start
+git clone https://github.com/junegunn/fzf.vim
 
 mkdir -p ~/.config/i3
 ln -f i3/config ~/.config/i3
