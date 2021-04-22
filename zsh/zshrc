@@ -40,6 +40,7 @@ bindkey '\e[B' history-search-forward
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey -s '^F' 'vf\n'
+bindkey -s '^T' 'tmux\n'
 zmodload zsh/complist
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
