@@ -11,7 +11,6 @@ ln -f nvim/init.vim ~/.config/nvim
 ln -f nvim/yep.vim ~/.config/nvim/colors
 ln -f nvim/plugins.vim ~/.config/nvim
 mkdir -p ~/.local/share/nvim/site/pack/$USER/start
-git clone https://github.com/junegunn/fzf.vim
 
 mkdir -p ~/.config/i3
 ln -f i3/config ~/.config/i3
@@ -30,7 +29,8 @@ ln -f rofi/yep.rasi ~/.config/rofi
 ln -f xorg/xinitrc ~/.xinitrc
 sudo cp xorg/*.conf /etc/X11/xorg.conf.d
 
-dir=$(find ~/.mozilla/firefox -type d -iregex ".*default-release")
+dir=$(echo -n ~/.mozilla/firefox/ ; grep -i default ~/.mozilla/firefox/installs.ini | awk -F= '{print $2}')
 mkdir -p $dir/chrome
 ln -f firefox/user.js $dir
 cp -r firefox/* $dir/chrome
+#find firefox -type f -exec ln -f {} $dir \;

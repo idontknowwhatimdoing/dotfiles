@@ -18,3 +18,6 @@ sudo mv *.otf /usr/share/fonts/FiraMono
 
 cd ~/.dotfiles
 ./setup.sh
+
+cd ~/.local/share/nvim/site/pack/$USER/start
+git clone https://github.com/junegunn/fzf.vim
