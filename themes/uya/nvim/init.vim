@@ -7,7 +7,7 @@ set hidden
 set nostartofline
 set encoding=utf-8
 set noswapfile
-"set lazyredraw (breaks the statusline at startup)
+set lazyredraw
 set ttyfast
 set nomodeline
 set path=.,,**
@@ -62,7 +62,7 @@ if !exists("g:syntax_on")
 	syntax enable
 endif
 set termguicolors
-colorscheme yep
+colorscheme uya
 
 " status line colors "
 hi User1 ctermfg=black ctermbg=red guifg=#0F1419 guibg=#FC6A67

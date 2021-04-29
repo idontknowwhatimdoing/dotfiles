@@ -91,6 +91,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+b exec firefox
 bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+v exec "qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/ArchLab.raw,format=raw"
+bindsym $mod+Shift+v exec "qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/42VM.raw,format=raw"
 
 # borders
 default_border pixel 3

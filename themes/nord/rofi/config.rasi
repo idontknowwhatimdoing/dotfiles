@@ -1,0 +1,11 @@
+configuration {
+	width: 51;
+	lines: 20;
+	font: "Fura Mono Nerd Font 18";
+	hide-scrollbar: true;
+	theme: "nord";
+	terminal: "alacritty";
+	display-run: "";
+	display-calc: "";
+	kb-cancel: "Escape,Control+c";
+}

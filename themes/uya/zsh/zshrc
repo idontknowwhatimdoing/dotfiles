@@ -21,10 +21,9 @@ bindkey -v
 
 function vf() {
 	f=$(fzf | tr '\n' ' ')
-	if [[ -z "$f" ]]; then
-		return
+	if [[ -n "$f" ]]; then
+		nvim -p $(echo $f)
 	fi
-	nvim -p $(echo $f)
 }
 
 autoload -Uz vcs_info
