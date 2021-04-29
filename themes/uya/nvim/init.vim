@@ -261,3 +261,6 @@ endfunction
 command! Stdheader call s:stdheader ()
 map <F1> :Stdheader<CR>
 autocmd BufWritePre * call s:update ()
+
+" plugins config "
+source ~/.config/nvim/plugins.vim

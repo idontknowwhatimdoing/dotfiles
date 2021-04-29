@@ -1,3 +1,13 @@
+[colors]
+background 	= #0F1419
+foreground 	= #FCFCFA
+red			= #FC6A67
+green		= #89FC67
+yellow		= #FFD866
+blue		= #FC8F67
+magenta		= #D967FC
+cyan		= #67D4FC
+
 [settings]
 screenchange-reload = true
 
@@ -12,8 +22,8 @@ padding = 1
 module-margin = 2
 fixed-center = false
 font-0 = FuraMono Nerd Font:style=Regular:size=16;1
-background = #0F1419
-foreground = #FCFCFA
+background = ${colors.background}
+foreground = ${colors.foreground}
 line-size = 5
 modules-left = i3
 modules-center = datetime
@@ -22,11 +32,11 @@ modules-right = updates battery audio xbacklight network
 [module/datetime]
 type = internal/date
 interval = 1
-date = %d/%m/%Y
+date = [%A] %d/%m/%Y
 time = %H:%M
 label = %date% - %time%
 label-padding = 1
-label-underline = #89FC67
+label-underline = ${colors.blue}
 
 [module/battery]
 type = internal/battery
@@ -40,14 +50,14 @@ ramp-capacity-3 = 
 ramp-capacity-4 = 
 label-charging =  %percentage%%
 format-charging-padding = 1
-format-charging-underline = #67D4FC
+format-charging-underline = ${colors.yellow}
 format-charging = <ramp-capacity> <label-charging>
 label-discharging = %percentage%%
 format-discharging-padding = 1
-format-discharging-underline = #67D4FC
+format-discharging-underline = ${colors.yellow}
 format-discharging = <ramp-capacity> <label-discharging>
 format-full-padding = 1
-format-full-underline = #67D4FC
+format-full-underline = ${colors.yellow}
 format-full = <ramp-capacity> <label-full>
 
 [module/i3]
@@ -62,7 +72,7 @@ label-unfocused = %index%
 label-separator = |
 label-separator-padding = 1
 label-focused-padding = 1
-label-focused-underline = #FC6A67
+label-focused-underline = ${colors.red}
 label-unfocused-padding = 1
 
 [module/network]
@@ -72,10 +82,10 @@ interval = 3.0
 unknown-as-up = true
 label-connected = 直 %essid%
 label-connected-padding = 1
-label-connected-underline = #FC8F67
+label-connected-underline = ${colors.blue}
 format-connected = <label-connected>
 label-disconnected = 睊
-label-disconnected-underline = #FC8F67
+label-disconnected-underline = ${colors.blue}
 
 [module/audio]
 type = internal/pulseaudio
@@ -84,10 +94,10 @@ ramp-volume-1 = 奔
 ramp-volume-2 = 墳
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
-format-volume-underline = #D967FC
+format-volume-underline = ${colors.red}
 label-muted = ﱝ
 format-muted-padding = 1
-format-muted-underline = #D967FC
+format-muted-underline = ${colors.red}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -97,11 +107,11 @@ ramp-2 = 
 ramp-3 = 
 format = <ramp> <label>
 format-padding = 1
-format-underline = #FFD866
+format-underline = ${colors.yellow}
 
 [module/updates]
 type = custom/script
 exec = ~/.config/polybar/scripts/check_updates.sh
 format-padding = 1
-format-underline = #FC6A67
+format-underline = ${colors.red}
 interval = 1000
