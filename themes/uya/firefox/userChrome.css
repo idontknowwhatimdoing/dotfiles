@@ -1,3 +1,6 @@
+/* Right click menu customizations */
+@import "popup/popup.css";
+
 /* Colors */
 :root {
 	--white: #FCFCFA;
