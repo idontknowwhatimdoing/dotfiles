@@ -11,7 +11,7 @@ command! -bang -nargs=* Rg
 
 " markdown config "
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal = 3
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
 let g:vim_markdown_toml_frontmatter = 1
@@ -22,7 +22,14 @@ let g:vim_markdown_edit_url_in = 'tab'
 let g:vim_markdown_follow_anchor = 1
 
 autocmd FileType markdown setlocal spell spelllang=en_us
-autocmd FileType markdown set conceallevel=2
+autocmd FileType markdown set conceallevel=3
 augroup pandoc_syntax
     au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
 augroup END
+
+" markdown preview "
+function MarkdownPreview() abort
+	call jobstart('grip -b ' . shellescape(expand('%:p')))
+endfunction
+
+command MDP call MarkdownPreview()
