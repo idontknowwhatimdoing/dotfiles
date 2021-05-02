@@ -7,7 +7,7 @@ Well, here are my dotfiles ...
 ```
 git clone https://github.com/idontknowwhatimdoing/dotfiles ~/.dotfiles
 cd ~/.dotfiles
-./set-theme.sh
+./set-theme.sh [<theme>]
 ```
 (see [below](#scripts))
 
@@ -34,16 +34,12 @@ If called without arguments, it will invoke [fzf](https://github.com/junegunn/fz
 
 Otherwise, specify the theme you want to set as an argument.
 ```
-./set-theme.sh
-```
-or
-```
-./set-theme.sh <theme>
+./set-theme.sh [<theme>]
 ```
 (restart your shell and window manager to apply all changes)
 
 ### chcl.sh
-Use this script if you want to modify a specific color across the entire config.
+Use this script if you want to modify a specific color across the entire theme config.
 
 You can find this script in every directory inside the theme directory.
 
