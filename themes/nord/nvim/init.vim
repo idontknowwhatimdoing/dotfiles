@@ -65,7 +65,7 @@ set termguicolors
 colorscheme nord
 
 " status line colors "
-hi User1 ctermfg=black ctermbg=red guifg=#2E3440 guibg=#81A1C1
+hi User1 ctermfg=black ctermbg=red guifg=#2E3440 guibg=#EBCB8B
 hi User3 ctermfg=black ctermbg=blue guifg=#2E3440 guibg=#81A1C1
 hi User4 ctermfg=black ctermbg=yellow guifg=#2E3440 guibg=#88C0D0
 hi User7 ctermfg=black ctermbg=yellow cterm=bold guifg=#2E3440 guibg=#88C0D0 gui=bold

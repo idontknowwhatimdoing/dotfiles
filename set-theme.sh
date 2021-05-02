@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-theme=$(ls ~/.dotfiles/themes -1 | fzf --disabled --preview-window=hidden)
+theme=$1
 
-if [[ -n "$theme" ]]; then
+if [[ $# -eq 1 ]]; then
 	ln -f themes/$theme/alacritty/alacritty.yml ~/.config/alacritty
 	ln -f themes/$theme/tmux/tmux.conf ~/.config/tmux/tmux.conf
 	ln -f themes/$theme/nvim/init.vim ~/.config/nvim
