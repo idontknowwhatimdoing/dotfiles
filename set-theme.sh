@@ -20,4 +20,5 @@ if [[ -n "$theme" ]]; then
 	cp -r themes/$theme/firefox/* $dir/chrome
 
 	source ~/.zshrc
+	ln -f xorg/xinitrc ~/.xinitrc
 fi
