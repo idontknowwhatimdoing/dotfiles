@@ -25,11 +25,7 @@ if [[ $# -eq 1 ]]; then
 	link_files
 fi
 
-which fzf >/dev/null
-if [[ $? -eq 0 ]];then
-	theme=$(ls themes -1 | fzf --disabled --preview-window=hidden)
-
-	if [[ -n $theme ]]; then
-		link_files
-	fi
+theme=$(ls themes -1 | fzf --disabled --preview-window=hidden)
+if [[ -n $theme ]]; then
+	link_files
 fi

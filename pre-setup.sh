@@ -6,7 +6,7 @@ sudo chown -R $USER:wheel yay
 cd yay
 makepkg -si
 
-yay -S --needed - < ~/.dotfiles/pkglist.txt
+yay -S --needed --noconfirm - < ~/.dotfiles/pkglist.txt
 
 mkdir -p ~/downloads
 cd ~/downloads
