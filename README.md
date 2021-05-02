@@ -17,4 +17,4 @@ usage: `./set-theme.sh <theme>`<br>
 You can find this script in every directory inside the theme directory.<br>
 You specify a color name and a new color code to replace it.<br>
 usage: `./chcl.sh <color name> <#RRGGBB>`<br>
-exemple: `chsl.sh red #FF0000`<br>
+exemple: `./chsl.sh red #FF0000`<br>
