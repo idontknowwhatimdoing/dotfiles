@@ -15,7 +15,8 @@ then<br>
 or just
 ```
 ./set-theme.sh
-``` (if you have fzf installed)<br>
+```
+(if you have fzf installed)<br>
 
 themes available for now:
 * uya (see showcase image)
