@@ -1,11 +1,12 @@
 # dotfiles
 Well, here are my dotfiles ...
+![showcase](merge_from_ofoct.png)
 
 ## Scripts
 I have a few scripts, here they are:
 
 ### pre-setup.sh
-Installs all dependencies listed in pkglist.txt with pacman (and yay) as well as [Fira Mono Nerd Font] (https://www.nerdfonts.com/font-downloads) and creates the config directories.<br>
+Installs all dependencies listed in pkglist.txt with pacman (and yay) as well as [Fira Mono Nerd Font](https://www.nerdfonts.com/font-downloads) and creates the config directories.<br>
 You most likely don't need to use it, but if you do: `./pre-setup.sh` (requires sudo and git to be installed)
 
 ### set-theme.sh
