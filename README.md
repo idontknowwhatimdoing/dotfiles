@@ -51,5 +51,6 @@ Exemple: changing red to #FF0000:
 ```
 (restart your shell and window manager to apply all changes)
 
-Result (notice the that red changed everywhere (to become way uglier hehe)):
+Result:
+(notice the that red changed everywhere (to become way uglier hehe))
 ![demontrate chcl.sh](chcl.png)
