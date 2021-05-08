@@ -1,0 +1,78 @@
+[colors]
+foreground = #f0f0f0
+background = #0f0f0f
+urgent     = #ceb188
+focused    = #9ec3c4
+faded      = #4c4c4c
+
+[bar/bar]
+width               = 66%
+height              = 41
+offset-x            = 16%
+offset-y            = 25
+fixed-center        = true
+background          = ${colors.background}
+foreground          = ${colors.foreground}
+padding-left        = 5
+padding-right       = 5
+module-margin-left  = 5
+module-margin-right = 5
+font-0				= FuraMono Nerd Font:style=Regular:size=12;1
+modules-left        = title
+modules-center      = i3
+modules-right       = battery time
+override-redirect   = true
+wm-restack			= i3
+
+[module/i3]
+type = internal/i3
+pin-workspaces	= true
+strip-wsnumbers	= true
+index-sort		= true
+enable-click	= true
+enable-scroll	= false
+label-focused	= %index%
+label-unfocused	= %index%
+label-separator	= |
+label-separator-padding	= 1
+label-focused-padding	= 1
+label-unfocused-padding	= 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.foreground}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+[module/time]
+type		= internal/date
+interval	= 25.0
+date		= %H:%M
+
+[module/title]
+type = internal/xwindow
+label-maxlen = 150
+
+[settings]
+screenchange-reload = true

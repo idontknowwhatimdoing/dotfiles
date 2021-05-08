@@ -7,11 +7,13 @@ tmux
 rofi
 wget
 unzip
+bspwm
+sxhkd
 neovim
 ripgrep
 polybar
-i3-gaps
 alacritty
+flameshot
 rofi-calc
 xorg-xset
 alsa-utils
@@ -24,6 +26,5 @@ sof-firmware
 xorg-setxkbmap
 pacman-contrib
 xorg-xbacklight
-xf86-video-vesa
-xf86-video-fbdev
 xf86-video-intel
+picom-ibhagwan-git

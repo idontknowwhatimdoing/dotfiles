@@ -8,4 +8,8 @@ configuration {
 	display-run: "";
 	display-calc: "";
 	kb-cancel: "Escape,Control+c";
+	kb-row-up: "Up,Control+k,ISO_Left_Tab";
+	kb-row-down: "Down,Control+j";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-remove-to-eol: "Control+i";
 }

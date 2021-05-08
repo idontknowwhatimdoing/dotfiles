@@ -1,7 +1,16 @@
 # dotfiles
 Well, here are my dotfiles ...
-- uya theme:
-![showcase](uya.png)
+
+## Themes
+
+### Uya
+![uya theme](screenshots/uya.png)
+
+### Mountain (check the [main repo](https://github.com/pradyungn/Mountain))
+![mountain theme](screenshots/mountain.png)
+
+### Nord (work in progress)
+![nord theme](screenshots/nord.png)
 
 ## Installation
 ```
@@ -11,12 +20,7 @@ cd ~/.dotfiles
 ```
 (see [below](#scripts))
 
-themes available for now:
-* uya (see image above)
-* nord (work in progress)
-
 ## Scripts
-I have a few scripts, here they are:
 
 ### pre-setup.sh
 Installs all dependencies listed in pkglist.txt with pacman (and yay) as well as [Fira Mono Nerd Font](https://www.nerdfonts.com/font-downloads) and creates the config directories.
@@ -52,5 +56,6 @@ Exemple: changing red to #FF0000:
 (restart your shell and window manager to apply all changes)
 
 Result:
+
 (notice the that red changed everywhere (to become way uglier hehe))
-![demontrate chcl.sh](chcl.png)
+![demontrate chcl.sh](screenshots/chcl.png)

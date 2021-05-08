@@ -1,0 +1,79 @@
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' expand suffix
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' '+l:|=* r:|=*'
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '~/.zshrc'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=500
+SAVEHIST=500
+unsetopt beep nomatch
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+function vf() {
+	f=$(fzf | tr '\n' ' ')
+	if [[ -n "$f" ]]; then
+		nvim -p $(echo $f)
+	fi
+}
+
+autoload -Uz vcs_info
+precmd() { vcs_info }
+setopt COMPLETE_ALIASES
+setopt PROMPT_SUBST
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats "%F{blue}%b%f "
+zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' gain-privileges 1
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+bindkey "^?" backward-delete-char
+bindkey '^R' history-incremental-search-backward
+bindkey -s '^F' 'vf\n'
+bindkey -s '^T' 'tmux\n'
+zmodload zsh/complist
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+alias ls='ls --color=auto'
+alias grep='grep --color'
+alias vim=nvim
+alias vi=nvim
+alias tmux='tmux -f ~/.config/tmux/tmux.conf'
+alias menfou="git add . ; git commit -m 'menfou' ; git push"
+alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
+alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
+alias norm=norminette
+alias make='make -s'
+alias nc=ncat
+alias ip='ip -color'
+
+export EDITOR=nvim
+export VISUAL=nvim
+export KEYTIMEOUT=1
+export PATH="$HOME/.cargo/bin:$PATH"
+export PROMPT='%B%F{yellow}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
+export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;31m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;33m'
+export FZF_DEFAULT_COMMAND='rg --smart-case --hidden --files'
+export FZF_DEFAULT_OPTS="-m --reverse --cycle --prompt='❯❯ ' --pointer='❯ ' \
+	--marker='❯ ' --info=inline --border=sharp --tabstop=4 --bind 'ctrl-p:toggle-preview' \
+	--preview='bat -f --pager=never --style=snip {}' --preview-window=border-sharp \
+	--color='fg:#f0f0f0,fg+:#8f8aac,bg:#0f0f0f,bg+:#0f0f0f,info:#ac8a8c,border:#8f8aac,prompt:#aca98a' \
+	--color='query:#aca98a,pointer:#8f8aac,marker:#8f8aac,hl:#aca98a,hl+:#aca98a'"

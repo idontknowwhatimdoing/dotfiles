@@ -3,7 +3,7 @@ configuration {
 	lines: 20;
 	font: "Fura Mono Nerd Font 18";
 	hide-scrollbar: true;
-	theme: "nord";
+	theme: "mountain";
 	terminal: "alacritty";
 	display-run: "";
 	display-calc: "";

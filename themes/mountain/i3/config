@@ -32,6 +32,9 @@ bindsym $mod+s split toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+e layout toggle split
 
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
@@ -84,8 +87,8 @@ bindsym $mod+Up resize shrink height 3 px or 3 ppt
 bindsym $mod+Right resize grow width 3 px or 3 ppt
 
 # program bindings
+bindsym Shift+Print exec flameshot screen -p ~/downloads
 bindsym Print exec flameshot gui
-bindsym Shift + Print exec flameshot screen -p ~/downloads
 bindsym $mod+space exec rofi -show run
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+Return exec alacritty
@@ -95,16 +98,16 @@ bindsym $mod+v exec "qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -
 bindsym $mod+Shift+v exec "qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/42VM.raw,format=raw"
 
 # borders
-default_border pixel 3
-smart_borders on
-client.focused #ffffff #285577 #ffffff #81A1C1 #81A1C1 
+default_border none
+client.focused #ffffff #285577 #ffffff #ac8a8c #ac8a8c
 client.focused_inactive #333333 #5f676a #ffffff #5f676a #5f676a
 
 # gaps
 gaps inner 20
 gaps top 40
+#smart_gaps inverse_outer
 
-# prevent the cursor from being wrapped to the center of window when switchings outputs
+# prvent the cursor from being wrapped to the center of window when switchings outputs
 mouse_warping none
 
 mode "system_controls" {
@@ -115,6 +118,6 @@ mode "system_controls" {
 bindsym $mod+Shift+q mode "system_controls"
 
 # startup stuff
-exec_always feh --no-fehbg --bg-fill ~/wallpapers/nord-tux.png
+exec_always feh --no-fehbg --bg-fill $(find ~/wallpapers -maxdepth 1 -type f | sort -R | head -n 1)
 exec_always ~/.config/polybar/scripts/launch.sh
 exec_always flameshot &
