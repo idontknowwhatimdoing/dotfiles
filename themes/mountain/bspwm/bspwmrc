@@ -3,12 +3,18 @@
 # autostart
 picom -b --experimental-backends
 ~/.config/polybar/scripts/launch.sh
-feh --no-fehbg --bg-fill ~/wallpapers/ok-city.jpg
+feh --no-fehbg --bg-fill ~/wallpapers/bamboo.png
 flameshot &
 
+export DESKTOP_COUNT=$(bspc query -M | wc -l)
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d 1 2 3 4 5
+# rename desktops
+i=1
+for monitor in $(bspc query -M); do
+	bspc desktop $monitor:\^1 -n $i
+	((i++))
+done
 
 bspc config border_width			0
 bspc config window_gap				20

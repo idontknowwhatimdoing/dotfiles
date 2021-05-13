@@ -1,4 +1,4 @@
 setxkbmap -option caps:escape
 xset s off ; xset -dpms
 amixer set Speaker 0%
-exec i3
+exec bspwm

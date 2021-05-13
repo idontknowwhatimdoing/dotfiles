@@ -1,117 +1,199 @@
 [colors]
-background 	= #2E3440
-foreground 	= #D8DEE9
+background	= #2E3440
+foreground	= #D8DEE9
 red			= #BF616A
 green		= #A3BE8C
 yellow		= #EBCB8B
 blue		= #81A1C1
 magenta		= #B48EAD
 cyan		= #88C0D0
+grey		= #616E88
 
 [settings]
 screenchange-reload = true
 
-[bar/mybar]
-monitor = ${env:MONITOR:}
-wm-restack = i3
-width = 100%:-40
-offset-x = 20
-override-redirect = true
-height = 40
-padding = 1
-module-margin = 2
-fixed-center = false
-font-0 = FuraMono Nerd Font:style=Regular:size=16;1
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 5
-modules-left = i3
-modules-center = datetime
-modules-right = updates battery audio xbacklight network 
+[bar/bar]
+monitor				= ${env:MONITOR:}
+wm-restack			= bspwm
+width				= 95%
+height				= 48
+offset-x			= 2.5%
+offset-y			= 2.5%
+radius				= 15
+fixed-center		= false
+background			= ${colors.background}
+foreground			= ${colors.foreground}
+padding				= 3
+module-margin		= 2
+font-0				= FuraMono Nerd Font:style=Regular:size=12;1
+modules-left		= launcher bspwm
+modules-center		= xwindow
+modules-right		= updates date volume battery xbacklight cpu memory network
+override-redirect	= false
+cursor-click		= pointer
+cursor-scroll		= ns-resize
+line-size			= 3
 
-[module/datetime]
-type = internal/date
-interval = 1
-date = [%A] %d/%m/%Y
-time = %H:%M
-label = %date% - %time%
-label-padding = 1
-label-underline = ${colors.green}
+[module/xwindow]
+type			= internal/xwindow
+label			= %title%
+label-maxlen	= 60
+format-padding	= 4
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-poll-interval = 5
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-label-charging =  %percentage%%
-format-charging-padding = 1
-format-charging-underline = ${colors.cyan}
-format-charging = <ramp-capacity> <label-charging>
-label-discharging = %percentage%%
-format-discharging-padding = 1
-format-discharging-underline = ${colors.cyan}
-format-discharging = <ramp-capacity> <label-discharging>
-format-full-padding = 1
-format-full-underline = ${colors.cyan}
-format-full = <ramp-capacity> <label-full>
+[module/workspaces]
+type					= internal/xworkspaces
+pin-workspaces			= true
+icon-default			= 
+format					= <label-state>
+label-active			= 
+label-occupied			= 
+label-urgent			= 
+label-empty				= 
+label-empty-padding		= 1
+label-active-padding	= 1
+label-urgent-padding	= 1
+label-occupied-padding	= 1
 
-[module/i3]
-type = internal/i3
-pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
-enable-click = true
-enable-scroll = false
-label-focused = %index%
-label-unfocused = %index%
-label-separator = |
-label-separator-padding = 1
-label-focused-padding = 1
-label-focused-underline = ${colors.red}
-label-unfocused-padding = 1
+[module/launcher]
+type				= custom/text
+content				= 
+content-foreground	= ${colors.blue}
+content-padding		= 0
+click-left			= bash -c 'rofi -show run'
 
-[module/network]
-type = internal/network
-interface = wlp0s20f3
-interval = 3.0
-unknown-as-up = true
-label-connected = 直 %essid%
-label-connected-padding = 1
-label-connected-underline = ${colors.blue}
-format-connected = <label-connected>
-label-disconnected = 睊
-label-disconnected-underline = ${colors.blue}
+[module/spotify]
+type						= custom/script
+tail						= true
+format-prefix				= "  "
+format-prefix-foreground	= ${colors.green}
+format						= <label>
+exec						= ~/.config/polybar/scripts/spotify_status.sh
 
-[module/audio]
-type = internal/pulseaudio
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-format-volume = <ramp-volume> <label-volume>
-format-volume-padding = 1
-format-volume-underline = ${colors.magenta}
-label-muted = ﱝ
-format-muted-padding = 1
-format-muted-underline = ${colors.magenta}
+[module/volume]
+type					= internal/pulseaudio
+format-volume			= <ramp-volume> <label-volume>
+label-volume			= %percentage%%
+ramp-volume-0			= 奄
+ramp-volume-1			= 奔
+ramp-volume-2			= 墳
+ramp-volume-foreground	= ${colors.magenta}
+label-muted				= ﱝ
+label-muted-foreground	= ${colors.magenta}
 
-[module/xbacklight]
-type = internal/xbacklight
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-format = <ramp> <label>
-format-padding = 1
-format-underline = ${colors.yellow}
+[module/xkeyboard]
+type						= internal/xkeyboard
+blacklist-0					= num lock
+format-prefix				= " "
+format-prefix-foreground	= ${colors.magenta}
+label-layout				= %layout%
+label-indicator-foreground	= ${colors.cyan}
+
+[module/filesystem]
+type								= internal/fs
+interval							= 25
+mount-0								= /
+format-mounted						= <label-mounted>
+format-mounted-foreground			= ${colors.magenta}
+format-mounted-prefix				= " "
+format-mounted-prefix-foreground	= ${colors.green}
+label-mounted						= %free%
+format-unmounted					= <label-unmounted>
+format-unmounted-prefix				=
+label-unmounted						= %mountpoint%: not mounted
 
 [module/updates]
-type = custom/script
-exec = ~/.config/polybar/scripts/check_updates.sh
-format-padding = 1
-format-underline = ${colors.red}
-interval = 1000
+type				= custom/script
+exec				= ~/.config/polybar/scripts/check-updates.sh
+format				= <label>
+interval			= 5000
+label-foreground	= ${colors.red}
+click-left			= alacritty -e yay
+
+[module/cpu]
+type						= internal/cpu
+interval					= 3
+format-prefix				= " "
+format-prefix-foreground	= ${colors.cyan}
+label						= %percentage%%
+
+[module/powermenu]
+type				= custom/text
+content				= 
+content-padding		= 0
+content-foreground	= ${colors.red}
+click-left			= 
+
+[module/memory]
+type						= internal/memory
+interval					= 3
+format-prefix				= " "
+format-prefix-foreground	= ${colors.blue}
+label						= %percentage_used%%
+
+[module/date]
+type						= internal/date
+interval					= 1
+format-prefix-foreground	= ${colors.green}
+time						= %H:%M
+time-alt					= %A %d/%m/%Y
+format-prefix				= " "
+label						= %time%
+
+[module/network]
+type								= internal/network
+interface							= wlp0s20f3
+interval							= 3
+unknown-as-up						= true
+label-connected						= %essid%
+format-connected-prefix				= "直 "
+format-connected-prefix-foreground	= ${colors.red}
+format-connected					= <label-connected>
+label-disconnected					= 睊
+label-disconnected-foreground		= ${colors.red}
+
+[module/xbacklight]
+type				= internal/xbacklight
+ramp-0				= 
+ramp-1				= 
+ramp-2				= 
+ramp-3				= 
+ramp-foreground		= ${colors.yellow}
+format				= <ramp> <label>
+
+[module/battery]
+type								= internal/battery
+battery								= BAT0
+adapter								= ADP1
+poll-interval						= 5
+ramp-capacity-0						= 
+ramp-capacity-1						= 
+ramp-capacity-2						= 
+ramp-capacity-3						= 
+ramp-capacity-4						= 
+ramp-capacity-foreground			= ${colors.yellow}
+label-charging						= %percentage%%
+format-charging						= <ramp-capacity> <label-charging>
+label-discharging					= %percentage%%
+format-charging-prefix				= " "
+format-charging-prefix-foreground	= ${colors.yellow}
+format-discharging					= <ramp-capacity> <label-discharging>
+format-full							= <ramp-capacity> <label-full>
+
+[module/bspwm]
+type						= internal/bspwm
+label-focused				= %name%
+label-empty					= %name%
+label-occupied				= %name%
+label-urgent				= %name%
+label-separator				= |
+label-separator-foreground	= ${colors.yellow}
+label-separator-padding		= 1
+label-dimmed-foreground		= ${colors.grey}
+label-empty-foreground		= ${colors.grey}
+label-occupied-foreground	= ${colors.grey}
+label-urgent-foreground		= ${colors.red}
+label-focused-padding		= 1
+label-empty-padding			= 1
+label-occupied-padding		= 1
+label-urgent-padding		= 1
+label-focused-underline		= ${colors.red}

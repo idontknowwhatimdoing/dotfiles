@@ -3,17 +3,14 @@ env:
 
 window:
     padding:
-        x: 5
-        y: 5
-    #decorations: none
-    #startup_mode: Maximized
+        x: 10
+        y: 10
     dynamic_title: false
     history: 500
 
 font:
     normal:
         family: FuraMono Nerd Font 
-        #family: Hack Nerd Font
     size: 14
 
 colors:

@@ -34,10 +34,6 @@ set wildmenu
 set showcmd
 set noshowmode
 
-" file browsing "
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-
 " mappings "
 map Y y$
 map 0 ^
@@ -248,7 +244,7 @@ function! RedrawModeColors(mode)
 endfunction
 
 function! SetFiletype(filetype)
-	return a:filetype == '' ? 'txt' : a:filetype
+	return a:filetype == '' ? 'text' : a:filetype
 endfunction
 
 set statusline=%{RedrawModeColors(mode())}

@@ -1,7 +1,7 @@
 configuration {
 	width: 51;
 	lines: 20;
-	font: "Fura Mono Nerd Font 18";
+	font: "Fura Mono Nerd Font 16";
 	hide-scrollbar: true;
 	theme: "mountain";
 	terminal: "alacritty";

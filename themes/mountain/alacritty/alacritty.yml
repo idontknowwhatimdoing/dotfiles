@@ -13,8 +13,6 @@ font:
         family: FuraMono Nerd Font 
     size: 14
 
-background_opacity: 1.0
-
 colors:
     primary:
         background: '#0f0f0f'
@@ -37,3 +35,5 @@ colors:
         magenta:    '#c49ec4'
         cyan:       '#9ec3c4'
         white:      '#f5f5f5'
+
+draw_bold_text_with_bright_colors: false

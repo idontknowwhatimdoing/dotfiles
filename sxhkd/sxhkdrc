@@ -7,6 +7,8 @@ super + Return
 # browser
 super + b
 	firefox
+super + shift + b
+	firefox --private-window
 
 # program launcher
 super + @space
@@ -21,6 +23,12 @@ Print
 	flameshot gui
 shift + Print
 	flameshot screen -p ~/downloads
+
+# virtual machines
+super + v
+	qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/ArchLab.raw,format=raw
+super + shift + v
+	qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/42VM.raw,format=raw
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -47,7 +55,7 @@ XF86MonBrightnessDown
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
+# close a node (window)
 super + shift + q
 	bspc node -c
 
@@ -59,9 +67,12 @@ super + m
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
+# create/delete a new desktop in the currently focused monitor
+super + n
+	((DESKTOP_COUNT++)); \
+	bspc monitor -a $DESKTOP_COUNT
+super + shift + n
+	bspc desktop -r
 
 # state/flags
 
@@ -75,17 +86,9 @@ super + ctrl + {m,x,y,z}
 
 # focus/swap
 
-# focus the node in the given direction
+# focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -95,15 +98,9 @@ super + bracket{left,right}
 super + {grave,Tab}
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+	bspc {desktop -f,node -d} '^{1-9,10}' --follow
 
 # preselect
 

@@ -30,7 +30,7 @@
 }
 
 element {
-    padding: 1px ;
+    padding: 2px ;
     spacing: 5px ;
     border:  0;
 }
@@ -93,9 +93,9 @@ element-icon {
 }
 
 window {
-    padding:          5;
-    background-color: #0F1419;
-    border:           5;
+    padding:          	5;
+    background-color: 	#0F1419;
+    border:           	3;
 }
 
 mainbox {
@@ -180,6 +180,6 @@ prompt {
 textbox-prompt-colon {
     margin:     0px 0.3000em 0.0000em 0.0000em ;
     expand:     false;
-    str:        "❯";
+    str:        "❯❯";
     text-color: inherit;
 }

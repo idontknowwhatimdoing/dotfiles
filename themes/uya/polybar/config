@@ -7,111 +7,135 @@ yellow		= #FFD866
 blue		= #FC8F67
 magenta		= #D967FC
 cyan		= #67D4FC
+grey		= #394C5F
 
 [settings]
 screenchange-reload = true
 
 [bar/mybar]
-monitor = ${env:MONITOR:}
-wm-restack = i3
-width = 100%:-40
-offset-x = 20
-override-redirect = true
-height = 40
-padding = 1
-module-margin = 2
-fixed-center = false
-font-0 = FuraMono Nerd Font:style=Regular:size=16;1
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 5
-modules-left = i3
-modules-center = datetime
-modules-right = updates battery audio xbacklight network 
+monitor				= ${env:MONITOR:}
+wm-restack			= bspwm
+width				= 90%
+offset-x			= 5%
+offset-y			= 2%
+override-redirect	= false
+height				= 50
+padding				= 2
+module-margin		= 2
+fixed-center		= false
+font-0				= FuraMono Nerd Font:style=Regular:size=14;1
+background			= ${colors.background}
+foreground			= ${colors.foreground}
+line-size			= 5
+modules-left		= bspwm
+modules-center		= datetime
+modules-right		= updates battery audio xbacklight network 
+cursor-click		= pointer
+cursor-scroll		= ns-resize
 
 [module/datetime]
-type = internal/date
-interval = 1
-date = [%A] %d/%m/%Y
-time = %H:%M
-label = %date% - %time%
-label-padding = 1
-label-underline = ${colors.blue}
+type			= internal/date
+interval		= 1
+date			= %A %d/%m/%Y
+time			= %H:%M
+label			= %date% - %time%
+label-padding	= 1
+label-underline	= ${colors.blue}
 
 [module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-poll-interval = 5
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-label-charging =  %percentage%%
-format-charging-padding = 1
-format-charging-underline = ${colors.yellow}
-format-charging = <ramp-capacity> <label-charging>
-label-discharging = %percentage%%
-format-discharging-padding = 1
-format-discharging-underline = ${colors.yellow}
-format-discharging = <ramp-capacity> <label-discharging>
-format-full-padding = 1
-format-full-underline = ${colors.yellow}
-format-full = <ramp-capacity> <label-full>
+type								= internal/battery
+battery								= BAT0
+adapter								= ADP1
+poll-interval						= 5
+ramp-capacity-0						= 
+ramp-capacity-1						= 
+ramp-capacity-2						= 
+ramp-capacity-3						= 
+ramp-capacity-4						= 
+label-charging						= %percentage%%
+format-charging-padding				= 1
+format-charging-underline			= ${colors.yellow}
+format-charging						= <ramp-capacity> <label-charging>
+label-discharging					= %percentage%%
+format-charging-prefix				= " "
+format-charging-prefix-foreground	= ${colors.yellow}
+format-discharging-padding			= 1
+format-discharging-underline		= ${colors.yellow}
+format-discharging					= <ramp-capacity> <label-discharging>
+format-full-padding					= 1
+format-full-underline				= ${colors.yellow}
+format-full							= <ramp-capacity> <label-full>
 
 [module/i3]
-type = internal/i3
-pin-workspaces = true
-strip-wsnumbers = true
-index-sort = true
-enable-click = true
-enable-scroll = false
-label-focused = %index%
-label-unfocused = %index%
-label-separator = |
-label-separator-padding = 1
-label-focused-padding = 1
-label-focused-underline = ${colors.red}
-label-unfocused-padding = 1
+type					= internal/i3
+pin-workspaces			= true
+strip-wsnumbers			= true
+index-sort				= true
+label-focused			= %index%
+label-unfocused			= %index%
+label-separator			= |
+label-separator-padding	= 1
+label-focused-padding	= 1
+label-focused-underline	= ${colors.red}
+label-unfocused-padding	= 1
 
 [module/network]
-type = internal/network
-interface = wlp0s20f3
-interval = 3.0
-unknown-as-up = true
-label-connected = 直 %essid%
-label-connected-padding = 1
-label-connected-underline = ${colors.blue}
-format-connected = <label-connected>
-label-disconnected = 睊
-label-disconnected-underline = ${colors.blue}
+type							= internal/network
+interface						= wlp0s20f3
+interval						= 3
+unknown-as-up					= true
+label-connected					= 直 %essid%
+label-connected-padding			= 1
+label-connected-underline		= ${colors.blue}
+format-connected				= <label-connected>
+label-disconnected				= 睊
+label-disconnected-underline	= ${colors.blue}
 
 [module/audio]
-type = internal/pulseaudio
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
-format-volume = <ramp-volume> <label-volume>
-format-volume-padding = 1
-format-volume-underline = ${colors.red}
-label-muted = ﱝ
-format-muted-padding = 1
-format-muted-underline = ${colors.red}
+type					= internal/pulseaudio
+ramp-volume-0			= 奄
+ramp-volume-1			= 奔
+ramp-volume-2			= 墳
+format-volume			= <ramp-volume> <label-volume>
+format-volume-padding	= 1
+format-volume-underline	= ${colors.red}
+label-muted				= ﱝ
+format-muted-padding	= 1
+format-muted-underline	= ${colors.red}
 
 [module/xbacklight]
-type = internal/xbacklight
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-format = <ramp> <label>
-format-padding = 1
-format-underline = ${colors.yellow}
+type				= internal/xbacklight
+ramp-0				= 
+ramp-1				= 
+ramp-2				= 
+ramp-3				= 
+format				= <ramp> <label>
+format-padding		= 1
+format-underline	= ${colors.yellow}
 
 [module/updates]
-type = custom/script
-exec = ~/.config/polybar/scripts/check_updates.sh
-format-padding = 1
-format-underline = ${colors.red}
-interval = 1000
+type				= custom/script
+exec				= ~/.config/polybar/scripts/check-updates.sh
+format-padding		= 1
+format-underline	= ${colors.red}
+interval			= 5000
+click-left			= alacritty -e yay && ~/.config/polybar/scripts/check-updates.sh
+
+[module/bspwm]
+type						= internal/bspwm
+label-focused				= %name%
+label-empty					= %name%
+label-occupied				= %name%
+label-urgent				= %name%
+label-separator				= |
+label-separator-foreground	= ${colors.yellow}
+label-separator-padding		= 1
+label-dimmed-foreground		= ${colors.grey}
+label-empty-foreground		= ${colors.grey}
+label-occupied-foreground	= ${colors.grey}
+label-urgent-foreground		= ${colors.red}
+label-focused-padding		= 1
+label-empty-padding			= 1
+label-occupied-padding		= 1
+label-urgent-padding		= 1
+label-focused-underline		= ${colors.red}
