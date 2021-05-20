@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 cd /opt
 sudo git clone https://aur.archlinux.org/yay-git.git yay

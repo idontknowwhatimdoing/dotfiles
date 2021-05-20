@@ -3,12 +3,13 @@
 
 /* Colors */
 :root {
-	--white: #f0f0f0;
-	--black: #0f0f0f;
-	--grey: #262626;
-	--orange: #8f8aac;
-	--yellow: #aca98a;
-	--red: #ac8a8c;
+	--white:	#f0f0f0;
+	--black:	#0f0f0f;
+	--grey:		#262626;
+	--blue:		#8f8aac;
+	--yellow:	#aca98a;
+	--red:		#ac8a8c;
+	--magenta:	#ac8aac;
 }
 
 /* Removes the tiny line in the bookmarks bar */
@@ -66,13 +67,13 @@ toolbarseparator {
 #tabbrowser-tabs { background: none !important; }
 
 /* Changes the color of the star button on websites you can bookmark */
-#star-button { fill: var(--orange) !important; }
+#star-button { fill: var(--blue) !important; }
 
 /* Changes the color of the animation when you bookmark a page */
 #star-button[starred][animate] + #star-button-animatable-box > #star-button-animatable-image {
-	stroke: var(--orange) !important;
-	fill: var(--orange) !important;
-	color: var(--orange) !important;
+	stroke: var(--blue) !important;
+	fill: var(--blue) !important;
+	color: var(--blue) !important;
 }
 
 /* This removes the flash of blue on tab load */
@@ -84,7 +85,7 @@ toolbarseparator {
 
 	background: var(--black) !important;
 	font-weight: bold !important;
-	color: var(--orange) !important;
+	color: var(--blue) !important;
 }
 
 #tabbrowser-tabs { --tab-loading-fill: var(--white) !important; }
@@ -98,13 +99,15 @@ toolbarseparator {
 }
 
 /* Changes the text color when you type something into the URL bar */
-#urlbar{
+#urlbar {
 	box-shadow: none !important;
 	background: var(--black) !important;
 	border: 2px solid !important;
-	border-color: var(--red) !important;
-	color : var(--yellow) !important;
+	border-color: var(--magenta) !important;
+	border-radius: 15px !important;
+	color : var(--red) !important;
 	font-weight: bold !important;
+	margin: 10px 0px !important;
 }
 
 /* Removes the faint line above the URL bar */
@@ -141,10 +144,11 @@ toolbarseparator {
 /* Changes the colors in the URL bar */
 #urlbar-background {
 	background: var(--black) !important;
+	border-radius: 15px !important;
 	/* border-color: var(--red) !important; */
 }
 
-#urlbar-input-container { color: var(--orange) !important; }
+#urlbar-input-container { color: var(--red) !important; }
 
 #urlbar { background: var(--black) !important; }
 
@@ -152,7 +156,7 @@ toolbarseparator {
 .tabbrowser-tab::before, .tabbrowser-tab::after { display: none !important; }
 
 /* Changes the text color of unfocused tabs */
-.tabbrowser-tab { color: var(--yellow) !important; }
+.tabbrowser-tab { color: var(--magenta) !important; }
 
 /* Changes the colors of the area behind the tabs */
 #tabbrowser-tabs { background: var(--grey) !important; }
@@ -220,7 +224,8 @@ tab {
 	--lwt-text-color: var(--white) !important;
 	color: var(--white) !important;
 	background: var(--black) !important;
-	border: 1px solid var(--white) !important;
+	border: 1px solid var(--magenta) !important;
+	border-radius: 10px !important;
 }
 
 .PanelUI-remotetabs-clientcontainer > label[itemtype="client"] { color: var(--white) !important; }
@@ -254,7 +259,7 @@ tab {
 	border: none !important;
 	border-radius: 10000px;
 	padding: 1px 8px;
-	background: var(--white) !important;
+	background: var(--black) !important;
 }
 
 /* Changes the text color in the bookmarks bar */

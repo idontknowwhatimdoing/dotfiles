@@ -5,6 +5,7 @@ fzf
 feh
 tmux
 rofi
+acpi
 wget
 unzip
 bspwm

@@ -1,15 +1,15 @@
 configuration {
 	width: 51;
 	lines: 20;
-	font: "Fura Mono Nerd Font 16";
+	font: "Fura Mono Nerd Font 18";
 	hide-scrollbar: true;
 	theme: "mountain";
 	terminal: "alacritty";
 	display-run: "";
 	display-calc: "";
 	kb-cancel: "Escape,Control+c";
-	kb-row-up: "Up,Control+k,ISO_Left_Tab";
+	kb-row-up: "Up,Control+k";
 	kb-row-down: "Down,Control+j";
-	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-accept-entry: "Return,KP_Enter";
 	kb-remove-to-eol: "Control+i";
 }

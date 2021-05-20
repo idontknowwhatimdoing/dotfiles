@@ -20,10 +20,7 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 function vf() {
-	f=$(fzf | tr '\n' ' ')
-	if [[ -n "$f" ]]; then
-		nvim -p $(echo $f)
-	fi
+	fzf | xargs -r nvim -p
 }
 
 autoload -Uz vcs_info
@@ -31,7 +28,7 @@ precmd() { vcs_info }
 setopt COMPLETE_ALIASES
 setopt PROMPT_SUBST
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' formats "%F{blue}%b%f "
+zstyle ':vcs_info:*' formats "%F{cyan}%b%f "
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 bindkey '\e[A' history-search-backward
@@ -63,7 +60,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export KEYTIMEOUT=1
 export PATH="$HOME/.cargo/bin:$PATH"
-export PROMPT='%B%F{yellow}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
+export PROMPT='%B%F{magenta}%3~%f ${vcs_info_msg_0_}%(?.%F{green}❯%f.%F{red}❯%f)%b '
 export LESS_TERMCAP_mb=$'\e[1;34m'
 export LESS_TERMCAP_md=$'\e[1;34m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -75,5 +72,5 @@ export FZF_DEFAULT_COMMAND='rg --smart-case --hidden --files'
 export FZF_DEFAULT_OPTS="-m --reverse --cycle --prompt='❯❯ ' --pointer='❯ ' \
 	--marker='❯ ' --info=inline --border=sharp --tabstop=4 --bind 'ctrl-p:toggle-preview' \
 	--preview='bat -f --pager=never --style=snip {}' --preview-window=border-sharp \
-	--color='fg:#f0f0f0,fg+:#8f8aac,bg:#0f0f0f,bg+:#0f0f0f,info:#ac8a8c,border:#8f8aac,prompt:#aca98a' \
-	--color='query:#aca98a,pointer:#8f8aac,marker:#8f8aac,hl:#aca98a,hl+:#aca98a'"
+	--color='fg:#f0f0f0,fg+:#ac8a8c,bg:#0f0f0f,bg+:#0f0f0f,info:#8aac8b,border:#ac8a8c,prompt:#ac8aac' \
+	--color='query:#ac8aac,pointer:#ac8a8c,marker:#ac8a8c,hl:#ac8aac,hl+:#ac8aac'"

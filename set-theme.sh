@@ -17,18 +17,15 @@ function link_files() {
 	ln -f themes/$theme/rofi/$theme.rasi ~/.config/rofi
 	dir=$(echo -n ~/.mozilla/firefox/ ; grep -i default ~/.mozilla/firefox/installs.ini | awk -F= '{print $2}')
 	ln -f themes/$theme/firefox/user.js $dir
-	cp -r themes/$theme/firefox/* $dir/chrome
+	ln -f themes/$theme/firefox/userChrome.css $dir
+	ln -f themes/$theme/firefox/userContent.css $dir
+	cp -r themes/$theme/firefox/popup dir/chrome
 	ln -f sxhkd/sxhkdrc ~/.config/sxhkd
 	ln -f xorg/xinitrc ~/.xinitrc
 	exit
 }
 
-if [[ $# -eq 1 ]]; then
-	theme=$1
-	link_files
-fi
+[[ $# -eq 1 ]] && theme=$1 && link_files
 
 theme=$(ls themes -1 | fzf --disabled --preview-window=hidden)
-if [[ -n $theme ]]; then
-	link_files
-fi
+[[ -n $theme ]] && link_files

@@ -63,10 +63,6 @@ super + shift + q
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
 # create/delete a new desktop in the currently focused monitor
 super + n
 	((DESKTOP_COUNT++)); \
@@ -94,11 +90,15 @@ super + {_,shift + }{h,j,k,l}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
+# swap the focused desktop with the desktop in the given direction
+super + shift + bracket{left,right}
+	bspc desktop -s {west:focused,east:focused} --follow
 
-# focus or send to the given desktop
+# focus the next/previous monitor
+super + {_,shift + }Tab
+	bspc monitor -f {next,prev}
+
+# focus/send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}' --follow
 

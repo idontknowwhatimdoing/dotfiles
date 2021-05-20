@@ -11,7 +11,7 @@ window:
 font:
     normal:
         family: FuraMono Nerd Font 
-    size: 12
+    size: 14
 
 colors:
     primary:

@@ -23,5 +23,4 @@ color=$(grep $1 alacritty/alacritty.yml | awk -F"'" '{print $2}' | head -n 1)
 
 find . -type f -exec sed -i "s/$color/$2/g" {} \;
 
-cd ../..
-./set-theme.sh mountain
+cd ../.. && ./set-theme.sh mountain
