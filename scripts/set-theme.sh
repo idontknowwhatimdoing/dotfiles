@@ -22,7 +22,8 @@ link_files() {
 	cp -r ~/.dotfiles/themes/$theme/firefox/popup $dir/chrome
 	ln -f ~/.dotfiles/sxhkd/sxhkdrc ~/.config/sxhkd
 	ln -f ~/.dotfiles/xorg/xinitrc ~/.xinitrc
-	exit
+
+	bspc wm -r && bspc node -c && alacritty
 }
 
 [ "$#" -eq 1 ] && theme=$1 && link_files
