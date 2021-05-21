@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 if [[ $# -ne 2 ]]; then
 	echo 'usage: chcl.sh <color> <#RRGGBB>'

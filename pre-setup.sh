@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 cd /opt
 sudo git clone https://aur.archlinux.org/yay-git.git yay
@@ -12,7 +12,7 @@ mkdir -p ~/downloads && cd ~/downloads
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraMono.zip
 unzip FiraMono.zip
 rm -rf FiraMono.zip *Windows*
-sudo mkdir -p /usr/share/fonts/FiraMono && sudo mv *.otf /usr/share/fonts/FiraMono
+sudo mkdir -p /share/fonts/FiraMono && sudo mv *.otf /share/fonts/FiraMono
 fc-cache
 
 mkdir -p ~/.config/{alacritty,tmux,nvim/colors,polybar/scripts,rofi,bspwm,sxhkd}

@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 function link_files() {
 	ln -f themes/$theme/alacritty/alacritty.yml ~/.config/alacritty
