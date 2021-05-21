@@ -26,7 +26,7 @@ shift + Print
 
 # custom power menu
 super + alt + p
-	~/.dotfiles/powermenu.sh
+	~/.dotfiles/scripts/powermenu.sh
 
 # virtual machines
 super + v
