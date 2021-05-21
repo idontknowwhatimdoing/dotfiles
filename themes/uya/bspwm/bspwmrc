@@ -1,9 +1,10 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 # autostart
 ~/.config/polybar/scripts/launch.sh
 feh --no-fehbg --bg-fill ~/wallpapers/spaceman.jpg
 flameshot &
+dunst &
 
 export DESKTOP_COUNT=$(bspc query -M | wc -l)
 pgrep -x sxhkd > /dev/null || sxhkd &

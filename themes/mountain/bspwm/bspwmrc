@@ -1,10 +1,11 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 # autostart
 picom -b --experimental-backends
 ~/.config/polybar/scripts/launch.sh
 feh --no-fehbg --bg-fill ~/wallpapers/bamboo.png
 flameshot &
+dunst &
 
 export DESKTOP_COUNT=$(bspc query -M | wc -l)
 pgrep -x sxhkd > /dev/null || sxhkd &
