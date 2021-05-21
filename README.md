@@ -3,13 +3,13 @@ Well, here are my dotfiles ...
 
 ## Themes
 
-### Uya
+### - Uya (inspired by the [ayu theme](https://github.com/ayu-theme))
 ![uya theme](screenshots/uya.png)
 
-### Mountain (check the [main repo](https://github.com/pradyungn/Mountain))
+### - [Mountain](https://github.com/pradyungn/Mountain)
 ![mountain theme](screenshots/mountain.png)
 
-### Nord (work in progress)
+### - [Nord](https://www.nordtheme.com/) (work in progress)
 ![nord theme](screenshots/nord.png)
 
 ## Installation
