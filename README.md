@@ -40,7 +40,6 @@ Otherwise, specify the theme you want to set as an argument.
 ```
 ./set-theme.sh [<theme>]
 ```
-(restart your shell and window manager to apply all changes)
 
 ### chcl.sh
 Use this script if you want to modify a specific color across the entire theme config.
@@ -53,7 +52,6 @@ Exemple: changing red to #FF0000:
 ```
 ./chcl.sh red #FF0000
 ```
-(restart your shell and window manager to apply all changes)
 
 Result:
 
