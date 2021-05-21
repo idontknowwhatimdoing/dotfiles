@@ -7,6 +7,7 @@ tmux
 rofi
 acpi
 wget
+dunst
 unzip
 bspwm
 sxhkd
@@ -14,10 +15,10 @@ neovim
 ripgrep
 polybar
 alacritty
+libnotify
 flameshot
 rofi-calc
 xorg-xset
-alsa-utils
 pulseaudio
 noto-fonts
 xorg-xinit

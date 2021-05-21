@@ -107,7 +107,6 @@ toolbarseparator {
 	border-radius: 15px !important;
 	color : var(--red) !important;
 	font-weight: bold !important;
-	margin: 10px 0px !important;
 }
 
 /* Removes the faint line above the URL bar */
