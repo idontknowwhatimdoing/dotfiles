@@ -57,5 +57,5 @@ Exemple: changing red to #FF0000:
 
 Result:
 
-(notice the that red changed everywhere (to become way uglier hehe))
+(notice the red that changed everywhere (to become way uglier hehe))
 ![demontrate chcl.sh](screenshots/chcl.png)
