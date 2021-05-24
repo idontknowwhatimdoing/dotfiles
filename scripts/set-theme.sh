@@ -15,6 +15,7 @@ link_files() {
 	ln -f ~/.dotfiles/themes/$theme/zsh/zshrc ~/.zshrc
 	ln -f ~/.dotfiles/themes/$theme/rofi/config.rasi ~/.config/rofi
 	ln -f ~/.dotfiles/themes/$theme/rofi/$theme.rasi ~/.config/rofi
+	ln -f ~/.dotfiles/themes/$theme/dunst/dunstrc ~/.config/dunst
 	dir=$(echo -n ~/.mozilla/firefox/ ; grep -i default ~/.mozilla/firefox/installs.ini | awk -F= '{print $2}')
 	ln -f ~/.dotfiles/themes/$theme/firefox/user.js $dir
 	ln -f ~/.dotfiles/themes/$theme/firefox/userChrome.css $dir/chrome
