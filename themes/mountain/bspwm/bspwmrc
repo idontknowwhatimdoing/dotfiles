@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # autostart
-pgrep -x picom > /dev/null || picom -b --experimental-backends
+pgrep -x picom || picom -b --experimental-backends
 ~/.config/polybar/scripts/launch.sh
 feh --no-fehbg --bg-fill ~/wallpapers/bamboo.png
-pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x dunst > /dev/null || dunst &
-pgrep -x flameshot > /dev/null || flameshot &
+pgrep -x sxhkd || sxhkd &
+pgrep -x dunst || dunst &
+pgrep -x flameshot  || flameshot &
 
 # rename desktops
 export DESKTOP_COUNT=$(bspc query -M | wc -l)

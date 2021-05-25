@@ -28,6 +28,10 @@ shift + Print
 super + alt + p
 	~/.dotfiles/scripts/powermenu.sh
 
+# change theme
+super + alt + t
+	~/.dotfiles/scripts/change-theme.sh
+
 # virtual machines
 super + v
 	qemu-system-x86_64 -k en-us -enable-kvm -cpu host -m 4096 -smp 2 -drive file=/var/lib/libvirt/images/ArchLab.raw,format=raw

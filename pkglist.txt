@@ -19,6 +19,7 @@ libnotify
 flameshot
 rofi-calc
 xorg-xset
+alsa-utils
 pulseaudio
 noto-fonts
 xorg-xinit

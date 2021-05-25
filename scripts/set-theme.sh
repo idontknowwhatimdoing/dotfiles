@@ -6,7 +6,6 @@ link_files() {
 	ln -f ~/.dotfiles/themes/$theme/nvim/init.vim ~/.config/nvim
 	ln -f ~/.dotfiles/themes/$theme/nvim/plugins.vim ~/.config/nvim
 	ln -f ~/.dotfiles/themes/$theme/nvim/$theme.vim ~/.config/nvim/colors
-	ln -f ~/.dotfiles/themes/$theme/i3/config ~/.config/i3
 	ln -f ~/.dotfiles/themes/$theme/bspwm/bspwmrc ~/.config/bspwm
 	ln -f ~/.dotfiles/themes/$theme/picom/picom.conf ~/.config/picom
 	ln -f ~/.dotfiles/themes/$theme/polybar/config ~/.config/polybar

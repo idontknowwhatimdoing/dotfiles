@@ -37,8 +37,18 @@ Sets the theme (found in the themes directory) by linking all config files to th
 If called without arguments, it will invoke [fzf](https://github.com/junegunn/fzf) to act as a selector.
 
 Otherwise, specify the theme you want to set as an argument.
+
+It will then restart bspwm and alacritty to make sure all changes take effect
 ```
 ./set-theme.sh [<theme>]
+```
+
+### change-theme.sh
+An other way of changing the theme, it uses rofi to list all themes so you can use it outside the terminal.
+
+It will call `set-theme.sh` with the selected theme.
+```
+./change-theme.sh
 ```
 
 ### chcl.sh

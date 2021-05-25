@@ -12,7 +12,7 @@ grey		= #394C5F
 [settings]
 screenchange-reload = true
 
-[bar/mybar]
+[bar/bar]
 monitor				= ${env:MONITOR:}
 wm-restack			= bspwm
 width				= 90%

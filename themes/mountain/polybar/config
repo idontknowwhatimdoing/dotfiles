@@ -199,4 +199,4 @@ label-focused-underline		= ${colors.orange}
 [module/check-battery]
 type		= custom/script
 exec		= ~/.dotfiles/scripts/check-battery.sh
-interval	= 500
+interval	= 300
