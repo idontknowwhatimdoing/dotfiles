@@ -95,7 +95,7 @@ element-icon {
 window {
     padding:          	5;
     background-color: 	#0F1419;
-    border:           	3;
+    border:           	2;
 }
 
 mainbox {
