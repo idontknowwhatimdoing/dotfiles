@@ -9,9 +9,6 @@ Well, here are my dotfiles ...
 ### - [Mountain](https://github.com/pradyungn/Mountain)
 ![mountain theme](screenshots/mountain.png)
 
-### - [Nord](https://www.nordtheme.com/) (work in progress)
-![nord theme](screenshots/nord.png)
-
 ## Installation
 ```
 git clone https://github.com/idontknowwhatimdoing/dotfiles ~/.dotfiles
