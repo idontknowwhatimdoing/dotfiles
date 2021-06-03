@@ -6,7 +6,7 @@ pgrep -x picom || picom -b --experimental-backends
 feh --no-fehbg --bg-fill ~/wallpapers/bamboo.png
 pgrep -x sxhkd || sxhkd &
 pgrep -x dunst || dunst &
-pgrep -x flameshot  || flameshot &
+pgrep -x flameshot || flameshot &
 
 # rename desktops
 export DESKTOP_COUNT=$(bspc query -M | wc -l)

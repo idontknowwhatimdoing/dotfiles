@@ -29,7 +29,7 @@ super + alt + p
 	~/.dotfiles/scripts/powermenu.sh
 
 # change theme
-super + alt + t
+super + alt + c
 	~/.dotfiles/scripts/change-theme.sh
 
 # virtual machines
@@ -73,7 +73,7 @@ super + m
 
 # create/delete a new desktop in the currently focused monitor
 super + n
-	((DESKTOP_COUNT++)); \
+	DESKTOP_COUNT=$((DESKTOP_COUNT+1)); \
 	bspc monitor -a $DESKTOP_COUNT
 super + shift + n
 	bspc desktop -r
