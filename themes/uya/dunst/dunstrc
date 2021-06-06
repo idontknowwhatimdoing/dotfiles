@@ -45,7 +45,6 @@
     class = Dunst
     startup_notification = false
     verbosity = mesg
-    corner_radius = 15
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false

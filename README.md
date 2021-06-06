@@ -35,7 +35,7 @@ If called without arguments, it will invoke [fzf](https://github.com/junegunn/fz
 
 Otherwise, specify the theme you want to set as an argument.
 
-It will then restart bspwm and alacritty to make sure all changes take effect
+It will then restart bspwm to make sure all changes take effect
 ```
 ./set-theme.sh [<theme>]
 ```

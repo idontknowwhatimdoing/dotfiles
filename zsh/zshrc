@@ -1,0 +1,31 @@
+unsetopt beep nomatch
+bindkey -v
+export KEYTIMEOUT=1
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+bindkey "^?" backward-delete-char
+bindkey -s '^T' 'tmux\n'
+
+export FZF_DEFAULT_COMMAND="rg --smart-case --hidden --files --glob '!.git' --glob '!*.o'"
+export LESS_TERMCAP_mb=$'\e[1;34m'
+export LESS_TERMCAP_md=$'\e[1;34m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;31m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;33m'
+
+fzf_open() {
+	fzf | xargs -r $EDITOR -p
+}
+bindkey -s '^F' 'fzf_open\n'
+
+fzf_history() {
+	cat $HISTFILE | fzf --height=10 --preview-window=hidden | sh
+}
+bindkey -s '^R' 'fzf_history\n'
+
+source $ZDOTDIR/completionrc
+source $ZDOTDIR/prompt
+source $ZDOTDIR/aliasrc
+source $ZDOTDIR/fzfrc

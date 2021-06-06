@@ -1,0 +1,16 @@
+zmodload zsh/complist
+autoload -Uz compinit ; compinit -d $XDG_CACHE_HOME/zsh/zcompdump
+_comp_options+=(globdots)
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+zstyle ':completion:*' completer _complete _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**' '+l:|=* r:|=*'
+zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' gain-privileges true
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+setopt COMPLETE_ALIASES
+setopt MENU_COMPLETE

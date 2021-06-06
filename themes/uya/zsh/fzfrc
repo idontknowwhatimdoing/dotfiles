@@ -1,0 +1,5 @@
+export FZF_DEFAULT_OPTS="-m --reverse --cycle --prompt='❯❯ ' --pointer='❯ ' \
+	--marker='❯ ' --info=inline --border=sharp --tabstop=4 --bind 'ctrl-p:toggle-preview' \
+	--preview='bat -f --pager=never --style=snip {}' --preview-window=border-sharp \
+	--color='fg:#FCFCFA,fg+:#FC8F67,bg:#0F1419,bg+:#0F1419,info:#FC6A67,border:#FC8F67,prompt:#FFD866' \
+	--color='query:#FFD866,pointer:#FC8F67,marker:#FC8F67,hl:#FFD866,hl+:#FFD866'"

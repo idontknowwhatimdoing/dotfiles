@@ -73,7 +73,7 @@ super + m
 
 # create/delete a new desktop in the currently focused monitor
 super + n
-	DESKTOP_COUNT=$((DESKTOP_COUNT+1)); \
+	export DESKTOP_COUNT=$((DESKTOP_COUNT+1)); \
 	bspc monitor -a $DESKTOP_COUNT
 super + shift + n
 	bspc desktop -r
