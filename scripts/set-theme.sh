@@ -11,8 +11,8 @@ link_files() {
 	ln -f ~/.dotfiles/themes/$theme/bspwm/bspwmrc $XDG_CONFIG_HOME/bspwm
 	ln -f ~/.dotfiles/themes/$theme/picom/picom.conf $XDG_CONFIG_HOME/picom
 	ln -f ~/.dotfiles/themes/$theme/polybar/config $XDG_CONFIG_HOME/polybar
-	ln -f ~/.dotfiles/themes/$theme/polybar/launch.sh $XDG_CONFIG_HOME/polybar/scripts
-	ln -f ~/.dotfiles/themes/$theme/polybar/check-updates.sh $XDG_CONFIG_HOME/polybar/scripts
+	ln -f ~/.dotfiles/scripts/polybar/launch.sh $XDG_CONFIG_HOME/polybar/scripts
+	ln -f ~/.dotfiles/scripts/polybar/check-updates.sh $XDG_CONFIG_HOME/polybar/scripts
 	ln -f ~/.dotfiles/zsh/zshrc $ZDOTDIR/.zshrc
 	ln -f ~/.dotfiles/zsh/zprofile $ZDOTDIR/.zprofile
 	ln -f ~/.dotfiles/zsh/zshenv ~/.zshenv

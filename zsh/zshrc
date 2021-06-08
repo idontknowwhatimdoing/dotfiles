@@ -1,4 +1,5 @@
-unsetopt beep nomatch
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
 bindkey -v
 export KEYTIMEOUT=1
 bindkey '\e[A' history-search-backward
@@ -22,8 +23,10 @@ bindkey -s '^F' 'fzf_open\n'
 
 fzf_history() {
 	cat $HISTFILE | fzf --height=10 --preview-window=hidden | sh
+	zle reset-prompt
 }
-bindkey -s '^R' 'fzf_history\n'
+zle     -N   fzf_history
+bindkey '^R' fzf_history
 
 source $ZDOTDIR/completionrc
 source $ZDOTDIR/prompt
