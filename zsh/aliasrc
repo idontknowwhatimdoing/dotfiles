@@ -4,11 +4,11 @@ alias vim=nvim
 alias vi=nvim
 alias menfou="git add . ; git commit -m 'menfou' ; git push"
 alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
-alias valcheck='valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes'
+alias valcheck='valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes'
 alias norm=norminette
-alias make='make -s'
+alias make='make -s -j'
 alias nc=ncat
 alias ip='ip -color'
 alias gdb="gdb -nh -x $XDG_CONFIG_HOME/gdb/init"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/hsts"
-alias gpg2="gpg2 --homedir $XDG_DATA_HOME/gnupg"
+alias gpg="gpg --homedir $XDG_DATA_HOME/gnupg"

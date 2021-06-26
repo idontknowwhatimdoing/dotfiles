@@ -28,7 +28,7 @@ function Modified()
 endfunction
 
 function! StatusLine(is_active)
-	return a:is_active ? "%7*%{FullMode(mode())}%1*%{BranchName()}%3*\ %F%{Modified()}%{Readonly()}%#StatusLine#%=%4*\ %c\ |\ %L\ %1*%{FileType()}" : "%#StatusLine#%{BranchName()}\ %F%{Modified()}%{Readonly()}%=\ %c\ |\ %L\ %{FileType()}"
+	return a:is_active ? "%7*%{FullMode(mode())}%1*%{BranchName()}%3*\ %f%{Modified()}%{Readonly()}%#StatusLine#%=%4*\ %c\ |\ %L\ %1*%{FileType()}" : "%#StatusLine#%{BranchName()}\ %f%{Modified()}%{Readonly()}%=\ %c\ |\ %L\ %{FileType()}"
 endfunction
 
 augroup statusline_setup
