@@ -1,28 +1,23 @@
 * {
-    red:                         rgba ( 234, 81, 178, 100 % );
-    blue:                        rgba ( 98, 214, 232, 100 % );
     foreground:                  #f0f0f0;
     background:                  #0f0f0f;
     background-color:            #0f0f0f;
     separatorcolor:              #262626;
     border-color:                #ac8a8c;
     selected-normal-foreground:  @background;
-    selected-normal-background:  @foreground;
-    selected-active-foreground:  @background;
-    selected-active-background:  @foreground;
-    selected-urgent-foreground:  @background;
-    selected-urgent-background:  @red;
+    selected-normal-background:  @background;
+    selected-active-foreground:  @separatorcolor;
+    selected-active-background:  @background;
+    selected-urgent-foreground:  @foreground;
     normal-foreground:           @foreground;
     normal-background:           @background;
     active-foreground:           @foreground;
     active-background:           @background;
-    urgent-foreground:           @red;
     urgent-background:           @background;
     alternate-normal-foreground: @foreground;
     alternate-normal-background: @background;
     alternate-active-foreground: @foreground;
     alternate-active-background: @background;
-    alternate-urgent-foreground: @red;
     alternate-urgent-background: @background;
     spacing:                     2;
 }
@@ -74,8 +69,8 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @foreground;
-    text-color:       @background;
+    background-color: @separatorcolor;
+    text-color:       @foreground;
 }
 
 element selected.urgent {
