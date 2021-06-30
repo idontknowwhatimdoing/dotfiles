@@ -5,8 +5,10 @@ link_files() {
 
 	ln -f ~/.dotfiles/themes/$theme/alacritty/alacritty.yml $XDG_CONFIG_HOME/alacritty
 	ln -f ~/.dotfiles/themes/$theme/tmux/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
-	ln -f ~/.dotfiles/themes/$theme/nvim/init.vim $XDG_CONFIG_HOME/nvim
-	ln -f ~/.dotfiles/themes/$theme/nvim/plugins.vim $XDG_CONFIG_HOME/nvim
+	ln -f ~/.dotfiles/nvim/init.vim $XDG_CONFIG_HOME/nvim
+	ln -f ~/.dotfiles/nvim/tabline.vim $XDG_CONFIG_HOME/nvim
+	ln -f ~/.dotfiles/nvim/plugins.vim $XDG_CONFIG_HOME/nvim
+	ln -f ~/.dotfiles/themes/$theme/nvim/statusline.vim $XDG_CONFIG_HOME/nvim
 	ln -f ~/.dotfiles/themes/$theme/nvim/$theme.vim $XDG_CONFIG_HOME/nvim/colors
 	ln -f ~/.dotfiles/themes/$theme/bspwm/bspwmrc $XDG_CONFIG_HOME/bspwm
 	ln -f ~/.dotfiles/themes/$theme/picom/picom.conf $XDG_CONFIG_HOME/picom
@@ -34,7 +36,7 @@ link_files() {
 	bspc wm -r
 }
 
-[ "$#" -eq 1 ] && theme=$1 && link_files
+[ "$#" -eq 1 ] && theme=$1 && link_files && echo $theme > ~/.dotfiles/.current-theme
 
-theme=$(ls ~/.dotfiles/themes -1 | fzf --disabled --preview-window=hidden)
-[ -n "$theme" ] && link_files
+theme=$(ls ~/.dotfiles/themes | fzf --disabled --preview-window=hidden)
+[ -n "$theme" ] && link_files && echo $theme > ~/.dotfiles/.current-theme

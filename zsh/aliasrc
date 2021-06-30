@@ -2,7 +2,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color'
 alias vim=nvim
 alias vi=nvim
-alias menfou="git add . ; git commit -m 'menfou' ; git push"
+alias gacp="git add . ; git commit -m 'menfou' ; git push"
 alias gcw='gcc -Wall -Werror -Wextra -g3 -O0'
 alias valcheck='valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes'
 alias norm=norminette
