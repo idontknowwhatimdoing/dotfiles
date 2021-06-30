@@ -1,5 +1,4 @@
-# dotfiles
-Well, here are my dotfiles ...
+# WARNING: very **epic** dotfiles
 
 ## Themes
 
