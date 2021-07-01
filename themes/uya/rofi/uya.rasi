@@ -1,5 +1,6 @@
 * {
     red:                         #FC6A67;
+    yellow:                      #FFD866;
     selected-active-foreground:  #0F1419;
     lightfg:                     #FCFCFA;
     separatorcolor:              #FC8F67;
@@ -15,12 +16,12 @@
     blue:                        #67D4FC;
     alternate-normal-foreground: #FCFCFA;
     urgent-background:           #0F1419;
-    selected-normal-foreground:  #0F1419;
+    selected-normal-foreground:  var(border-color);
     active-foreground:           var(blue);
     background:                  #0F1419;
     selected-active-background:  var(blue);
     active-background:           #0F1419;
-    selected-normal-background:  #FCFCFA;
+    selected-normal-background:  #394C5F;
     alternate-normal-background: #0F1419;
     foreground:                  #FCFCFA;
     selected-urgent-foreground:  #0F1419;
@@ -53,6 +54,7 @@ element normal.active {
 element selected.normal {
     background-color: var(selected-normal-background);
     text-color:       var(selected-normal-foreground);
+	text-style:		  underline;
 }
 
 element selected.urgent {
@@ -94,7 +96,7 @@ element-icon {
 
 window {
     padding:          	5;
-    background-color: 	#0F1419;
+    background-color: 	var(background);
     border:           	2;
 }
 
@@ -111,15 +113,6 @@ message {
 
 textbox {
     text-color: #FCFCFA;
-}
-
-listview {
-    padding:      2px 0px 0px ;
-    scrollbar:    false;
-    border-color: var(separatorcolor);
-    spacing:      2px ;
-    fixed-height: 0;
-    border:       2px dash 0px 0px ;
 }
 
 sidebar {
@@ -139,24 +132,24 @@ button selected {
 
 num-filtered-rows {
     expand:     false;
-    text-color: rgba ( 128, 128, 128, 100 % );
+    text-color: var(red);
 }
 
 num-rows {
     expand:     false;
-    text-color: rgba ( 128, 128, 128, 100 % );
+    text-color: var(red);
 }
 
 textbox-num-sep {
     expand:     false;
     str:        "/";
-    text-color: rgba ( 128, 128, 128, 100 % );
+    text-color: var(red);
 }
 
 inputbar {
     padding:    1px ;
     spacing:    0px ;
-    text-color: var(normal-foreground);
+    text-color: var(yellow);
     children:   [ prompt,textbox-prompt-colon,entry,num-filtered-rows,textbox-num-sep,num-rows,case-indicator ];
 }
 
@@ -166,10 +159,9 @@ case-indicator {
 }
 
 entry {
-    placeholder-color: rgba ( 128, 128, 128, 100 % );
     spacing:           0;
     placeholder:       "";
-    text-color:        var(normal-foreground);
+    text-color:        var(yellow);
 }
 
 prompt {

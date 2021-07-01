@@ -2,11 +2,11 @@
     foreground:                  #f0f0f0;
     background:                  #0f0f0f;
     background-color:            #0f0f0f;
-    separatorcolor:              #262626;
+    separatorcolor:              #0f0f0f;
     border-color:                #ac8a8c;
     selected-normal-foreground:  @background;
     selected-normal-background:  @background;
-    selected-active-foreground:  @separatorcolor;
+    selected-active-foreground:  @foreground;
     selected-active-background:  @background;
     selected-urgent-foreground:  @foreground;
     normal-foreground:           @foreground;
@@ -39,18 +39,9 @@ textbox {
     text-color:       @foreground;
 }
 
-listview {
-    fixed-height:     0;
-    border:           2px dash 0px 0px ;
-    border-color:     @separatorcolor;
-    spacing:          2px ;
-    scrollbar:        false;
-    padding:          2px 0px 0px ;
-}
-
 element {
     border:           0;
-    padding:          1px ;
+    padding:          2px ;
 }
 
 element normal.normal {
@@ -69,7 +60,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @separatorcolor;
+    background-color: #262626;
     text-color:       @foreground;
 }
 
@@ -110,7 +101,7 @@ button selected {
 
 inputbar {
     spacing:          0px;
-    text-color:       @normal-foreground;
+    text-color:       #ac8aac;
     padding:          1px ;
     children:         [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
@@ -122,7 +113,7 @@ case-indicator {
 
 entry {
     spacing:          0;
-    text-color:       @normal-foreground;
+    text-color:       #ac8aac;
 }
 
 prompt {

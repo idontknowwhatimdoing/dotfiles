@@ -19,10 +19,10 @@ link_files() {
 	ln -f ~/.dotfiles/zsh/zprofile $ZDOTDIR/.zprofile
 	ln -f ~/.dotfiles/zsh/zshenv ~/.zshenv
 	ln -f ~/.dotfiles/zsh/aliasrc $ZDOTDIR/aliasrc
+	ln -f ~/.dotfiles/zsh/completionrc $ZDOTDIR/completionrc
 	ln -f ~/.dotfiles/themes/$theme/zsh/prompt $ZDOTDIR/prompt
 	ln -f ~/.dotfiles/themes/$theme/zsh/fzfrc $ZDOTDIR/fzfrc
-	ln -f ~/.dotfiles/zsh/completionrc $ZDOTDIR/completionrc
-	ln -f ~/.dotfiles/themes/$theme/rofi/config.rasi $XDG_CONFIG_HOME/rofi
+	ln -f ~/.dotfiles/rofi/config.rasi $XDG_CONFIG_HOME/rofi
 	ln -f ~/.dotfiles/themes/$theme/rofi/$theme.rasi $XDG_CONFIG_HOME/rofi
 	ln -f ~/.dotfiles/themes/$theme/dunst/dunstrc $XDG_CONFIG_HOME/dunst
 	dir=$(echo -n ~/.mozilla/firefox/ ; grep -i default ~/.mozilla/firefox/installs.ini | awk -F= '{print $2}')

@@ -25,3 +25,4 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox
 export PAGER=less
+export THEME=$(cat ~/.dotfiles/.current-theme)

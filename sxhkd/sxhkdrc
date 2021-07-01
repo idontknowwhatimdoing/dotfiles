@@ -12,7 +12,7 @@ super + shift + b
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -theme $(cat ~/.dotfiles/.current-theme) -show run
 
 # rofi calc
 super + c
