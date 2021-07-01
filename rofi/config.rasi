@@ -1,5 +1,4 @@
 configuration {
-	monitor:			-4;
 	modi:				"run";
 	width:				45;
 	lines:				15;

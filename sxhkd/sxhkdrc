@@ -12,11 +12,11 @@ super + shift + b
 
 # program launcher
 super + @space
-	rofi -theme $(cat ~/.dotfiles/.current) -show run
+	rofi -m -1 -theme $(cat ~/.dotfiles/.current) -show run
 
 # rofi calc
 super + c
-	rofi -theme $(cat ~/.dotfiles/.current) -show calc -modi calc -no-show-match -no-sort
+	rofi -m -1 -theme $(cat ~/.dotfiles/.current) -show calc -modi calc -no-show-match -no-sort
 
 # screenshot utility
 Print

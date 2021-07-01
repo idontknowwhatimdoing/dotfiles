@@ -1,4 +1,4 @@
-export THEME=$(cat ~/.dotfiles/.current-theme)
+export THEME=$(cat ~/.dotfiles/.current)
 export KEYTIMEOUT=1
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
