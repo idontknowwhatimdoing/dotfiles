@@ -1,4 +1,4 @@
-# WARNING: very **epic** dotfiles
+#  WARNING: very epic dotfiles 
 
 ## Themes
 
