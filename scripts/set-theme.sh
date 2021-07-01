@@ -36,7 +36,7 @@ link_files() {
 	bspc wm -r
 }
 
-[ "$#" -eq 1 ] && theme=$1 && link_files && echo $theme > ~/.dotfiles/.current-theme
+[ "$#" -eq 1 ] && theme=$1 && link_files && echo $theme > ~/.dotfiles/.current
 
 theme=$(ls ~/.dotfiles/themes | fzf --disabled --preview-window=hidden)
-[ -n "$theme" ] && link_files && echo $theme > ~/.dotfiles/.current-theme
+[ -n "$theme" ] && link_files && echo $theme > ~/.dotfiles/.current
