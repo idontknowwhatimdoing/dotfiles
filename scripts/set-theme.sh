@@ -10,7 +10,7 @@ link_files() {
 	ln -f ~/.dotfiles/nvim/plugins.vim $XDG_CONFIG_HOME/nvim
 	ln -f ~/.dotfiles/themes/$theme/nvim/statusline.vim $XDG_CONFIG_HOME/nvim
 	ln -f ~/.dotfiles/themes/$theme/nvim/$theme.vim $XDG_CONFIG_HOME/nvim/colors
-	ln -f ~/.dotfiles/themes/$theme/bspwm/bspwmrc $XDG_CONFIG_HOME/bspwm
+	ln -f ~/.dotfiles/bspwm/bspwmrc $XDG_CONFIG_HOME/bspwm
 	ln -f ~/.dotfiles/themes/$theme/picom/picom.conf $XDG_CONFIG_HOME/picom
 	ln -f ~/.dotfiles/themes/$theme/polybar/config $XDG_CONFIG_HOME/polybar
 	ln -f ~/.dotfiles/scripts/polybar/launch.sh $XDG_CONFIG_HOME/polybar/scripts
