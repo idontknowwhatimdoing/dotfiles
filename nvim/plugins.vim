@@ -3,7 +3,7 @@ nnoremap <C-f>	:Files<CR>
 nnoremap s		:BLines<CR>
 nnoremap <S-s>	:Rg<CR>
 
-"let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0, 'border': 'none' } }
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0, 'border': 'none' } }
 
 " avoid matching on file names
 command -nargs=* Rg
