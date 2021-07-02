@@ -11,7 +11,7 @@
 ## Installation
 ```
 git clone https://github.com/idontknowwhatimdoing/dotfiles ~/.dotfiles
-cd ~/.dotfiles
+cd ~/.dotfiles/scripts
 ./set-theme.sh [<theme>]
 ```
 (see [below](#scripts))
@@ -54,6 +54,22 @@ You can find this script in every directory inside the theme directory.
 
 Specify a color name and a new color code to replace it.
 
+Colors:
+- red
+- yellow
+- green
+- cyan
+- blue
+- magenta
+- black
+- white
+- background
+- foreground
+
+Color code is in the format: `#RRGGBB`
+
+Kinda useless but it can be nice when you want to mess around when making a new theme/rice.
+
 Exemple: changing red to #FF0000:
 ```
 ./chcl.sh red #FF0000
@@ -61,5 +77,12 @@ Exemple: changing red to #FF0000:
 
 Result:
 
-(notice the red that changed everywhere (to become way uglier hehe))
+notice that the red changed everywhere
 ![demontrate chcl.sh](screenshots/chcl.png)
+
+## Todo
+- Finish rofi themes
+- Improve polybar setup (mountain)
+- Rewrite neovim config in Lua
+- Update screenshots
+- Work on Discord themes

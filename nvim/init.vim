@@ -53,11 +53,13 @@ inoremap [<CR> [<CR>]<Esc>O
 inoremap (<CR> (<CR>)<Esc>O
 inoremap <C-f> <C-x><C-f>
 
+autocmd FileType markdown set conceallevel=2
+
 " color theme "
 syntax on
 set termguicolors
 colorscheme $THEME
 
-source ~/.config/nvim/statusline.vim
-source ~/.config/nvim/tabline.vim
-source ~/.config/nvim/plugins.vim
+source $XDG_CONFIG_HOME/nvim/statusline.vim
+source $XDG_CONFIG_HOME/nvim/tabline.vim
+source $XDG_CONFIG_HOME/nvim/plugins.vim

@@ -13,3 +13,4 @@ alias gdb="gdb -nh -x $XDG_CONFIG_HOME/gdb/init"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/hsts"
 alias gpg="gpg --homedir $XDG_DATA_HOME/gnupg"
 alias rofi="rofi -theme $THEME"
+alias curl='curl -s'

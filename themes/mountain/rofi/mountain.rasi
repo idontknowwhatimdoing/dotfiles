@@ -25,7 +25,7 @@
 window {
     background-color: @background;
     border:           2;
-	border-radius:	  15;
+	border-radius:	  12;
     padding:          10;
 }
 

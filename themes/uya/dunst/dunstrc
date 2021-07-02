@@ -38,7 +38,7 @@
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
     sticky_history = yes
     history_length = 20
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
     always_run_script = true
     title = Dunst
@@ -58,12 +58,12 @@
 [urgency_low]
     background = "#0F1419"
     foreground = "#FCFCFA"
-	timeout = 0
+	timeout = 10
 
 [urgency_normal]
     background = "#0F1419"
     foreground = "#FCFCFA"
-    timeout = 0
+    timeout = 10
 
 [urgency_critical]
     background = "#0F1419"
