@@ -2,8 +2,6 @@
 
 killall -q polybar
 
-echo $THEME
-
 if [ $THEME = 'mountain' ]; then
 	for m in $(polybar --list-monitors | awk -F: '{print $1}'); do
 		MONITOR=$m polybar -r workspaces >>/tmp/polybar1.log &
