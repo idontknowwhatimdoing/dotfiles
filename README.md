@@ -21,11 +21,11 @@ cd ~/.dotfiles/scripts
 ### pre-setup.sh
 Installs all dependencies listed in pkglist.txt with pacman (and yay) as well as [Fira Mono Nerd Font](https://www.nerdfonts.com/font-downloads) and creates the config directories.
 
-It is designed to be used after a fresh arch install so you most likely don't need to use it, but if you do:
+It is designed to be used after a fresh Arch install so you most likely don't need to use it, but if you do:
 ```
 ./pre-setup.sh
 ```
-(requires sudo and git to be installed)
+(requires sudo and git to be installed and a non root user to be set up)
 
 ### set-theme.sh
 Sets the theme (found in the themes directory) by linking all config files to their respective config folders.
@@ -40,9 +40,11 @@ It will then restart bspwm to make sure all changes take effect
 ```
 
 ### change-theme.sh
-An other way of changing the theme, it uses rofi to list all themes so you can use it outside the terminal.
+An other way of changing the theme, it uses [rofi](https://github.com/davatorium/rofi) to list all themes so you can use it outside the terminal.
 
 It will call `set-theme.sh` with the selected theme.
+
+Use a shortcut to call this script from your window manager (or sxhd) for maximum efficiency (wow).
 ```
 ./change-theme.sh
 ```
@@ -86,3 +88,4 @@ notice that the red changed everywhere
 - Rewrite neovim config in Lua
 - Update screenshots
 - Work on Discord themes
+- Refactor some scripts

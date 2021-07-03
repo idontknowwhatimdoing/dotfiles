@@ -115,10 +115,6 @@ if has("nvim")
   let g:terminal_color_15 = "#e7e7e7"
   let g:terminal_color_background = g:terminal_color_0
   let g:terminal_color_foreground = g:terminal_color_5
-  if &background == "light"
-    let g:terminal_color_background = g:terminal_color_7
-    let g:terminal_color_foreground = g:terminal_color_2
-  endif
 elseif has("terminal")
   let g:terminal_ansi_colors = [
         \ "#262626",
@@ -218,7 +214,7 @@ call <sid>hi("CursorLineNr",  s:gui04, s:gui00, s:cterm04, s:cterm01, "", "")
 call <sid>hi("QuickFixLine",  "", s:gui01, "", s:cterm01, "none", "")
 call <sid>hi("PMenu",         s:gui05, s:gui01, s:cterm05, s:cterm01, "none", "")
 call <sid>hi("PMenuSel",      s:gui04, s:gui01, s:cterm01, s:cterm05, "bold", "")
-call <sid>hi("TabLine",       s:gui0E, s:gui01, s:cterm03, s:cterm01, "none", "")
+call <sid>hi("TabLine",       s:gui0E, s:gui00, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineFill",   s:gui00, s:gui00, s:cterm03, s:cterm01, "none", "")
 call <sid>hi("TabLineSel",    s:gui04, s:gui00, s:cterm0B, s:cterm01, "bold", "")
 
