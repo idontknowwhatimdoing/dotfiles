@@ -2,7 +2,7 @@
 
 # autostart
 pkill -x picom ; picom -b --experimental-backends
-~/.config/polybar/scripts/launch.sh
+$XDG_CONFIG_HOME/polybar/scripts/launch.sh
 feh --no-fehbg --bg-fill ~/wallpapers/castle.jpg
 pgrep -x sxhkd || sxhkd &
 pgrep -x flameshot || flameshot &

@@ -2,7 +2,7 @@
 
 killall -q polybar
 
-if [ $THEME = 'mountain' ]; then
+if [ $(cat ~/.dotfiles/.current) = 'mountain' ]; then
 	for m in $(polybar --list-monitors | awk -F: '{print $1}'); do
 		MONITOR=$m polybar -r workspaces >>/tmp/polybar1.log &
 		MONITOR=$m polybar -r datetime >>/tmp/polybar1.log &

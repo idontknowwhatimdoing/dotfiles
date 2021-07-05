@@ -45,6 +45,8 @@ An other way of changing the theme, it uses [rofi](https://github.com/davatorium
 It will call `set-theme.sh` with the selected theme.
 
 Use a shortcut to call this script from your window manager (or sxhd) for maximum efficiency (wow).
+
+If you think of a better name, let me know lmao
 ```
 ./change-theme.sh
 ```
@@ -89,3 +91,4 @@ notice that the red changed everywhere
 - Update screenshots
 - Work on Discord themes
 - Refactor some scripts
+- Try out [Eww](https://github.com/elkowar/eww) (?)

@@ -52,9 +52,8 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: var(selected-normal-background);
-    text-color:       var(selected-normal-foreground);
-	text-style:		  underline;
+    background-color: var(normal-background);
+	text-color:       var(selected-normal-foreground);
 }
 
 element selected.urgent {
@@ -83,21 +82,13 @@ element alternate.active {
 }
 
 element-text {
-    background-color: rgba ( 0, 0, 0, 0 % );
-    highlight:        inherit;
-    text-color:       inherit;
-}
-
-element-icon {
-    background-color: rgba ( 0, 0, 0, 0 % );
-    size:             1.2000ch ;
-    text-color:       inherit;
+    highlight:        none #FFD866;
 }
 
 window {
     padding:          	5;
     background-color: 	var(background);
-    border:           	2;
+    border:           	5;
 }
 
 mainbox {
@@ -112,7 +103,7 @@ message {
 }
 
 textbox {
-    text-color: #FCFCFA;
+    text-color: var(normal-foreground);
 }
 
 sidebar {
