@@ -14,7 +14,7 @@ function! RedrawModeColors(mode)
 		hi MyStatuslineAccentBody guifg=#050505 gui=none guibg=#8aabac
 	elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
 		hi MyStatuslineAccent guibg=#0f0f0f gui=none guifg=#0f0f0f
-		hi MyStatuslineAccentBody guifg=#050505 gui=none guibg=#aca98a
+		hi MyStatuslineAccentBody guifg=#050505 gui=none guibg=#8f8aac
 	endif
 	return ''
 endfunction
@@ -49,7 +49,7 @@ hi StatusLineNC        guifg=#050505    guibg=#c49ea0  gui=none
 hi MyStatuslineSeparator guifg=#191919 gui=none guibg=#191919 
 hi reset guibg=#0f0f0f
 hi MyStatuslineFiletype guibg=#0f0f0f gui=none guifg=#191919
-hi MyStatuslineFiletypeBody guibg=#ac8aac gui=none guifg=#050505
+hi MyStatuslineFiletypeBody guibg=#aca98a gui=none guifg=#050505
 hi MyStatuslinePercentage guibg=#191919 gui=none guifg=#f0f0f0
 hi MyStatuslinePercentageBody guibg=#191919 gui=none guifg=#f0f0f0
 hi MyStatuslineLineCol guibg=#191919 gui=none guifg=#f0f0f0

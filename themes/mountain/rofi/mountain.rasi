@@ -1,4 +1,6 @@
 * {
+	red:						 #ac8a8c;
+	yellow:						 #aca98a;
     foreground:                  #f0f0f0;
     background:                  #0f0f0f;
     background-color:            #0f0f0f;
@@ -45,7 +47,7 @@ element {
 }
 
 element-text {
-    highlight:        none #c49ec4;
+    highlight:        none #aca98a;
 }
 
 element normal.normal {
@@ -64,8 +66,8 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: #262626;
-    text-color:       @foreground;
+    background-color: @background;
+    text-color:       @red;
 }
 
 element selected.urgent {
@@ -105,7 +107,7 @@ button selected {
 
 inputbar {
     spacing:          0px;
-    text-color:       #ac8aac;
+    text-color:       @yellow;
     padding:          1px ;
     children:         [ prompt,textbox-prompt-colon,entry,case-indicator ];
 }
@@ -117,7 +119,7 @@ case-indicator {
 
 entry {
     spacing:          0;
-    text-color:       #ac8aac;
+    text-color:       @yellow;
 }
 
 prompt {
