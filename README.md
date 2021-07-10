@@ -5,8 +5,9 @@
 ### - Uya (inspired by the [ayu theme](https://github.com/ayu-theme))
 ![uya theme](screenshots/uya.png)
 
-### - [Mountain](https://github.com/pradyungn/Mountain)
+### -  [Mountain](https://github.com/pradyungn/Mountain) 
 ![mountain theme](screenshots/mountain.png)
+![mountain theme](screenshots/mountain2.png)
 
 ## Installation
 ```
@@ -28,7 +29,7 @@ It is designed to be used after a fresh Arch install so you most likely don't ne
 (requires sudo and git to be installed and a non root user to be set up)
 
 ### set-theme.sh
-Sets the theme (found in the themes directory) by linking all config files to their respective config folders.
+Sets the theme (found in the [themes](https://github.com/idontknowwhatimdoing/dotfiles/tree/master/themes) directory) by linking all config files to their respective config folders.
 
 If called without arguments, it will invoke [fzf](https://github.com/junegunn/fzf) to act as a selector.
 
@@ -40,11 +41,13 @@ It will then restart bspwm to make sure all changes take effect
 ```
 
 ### change-theme.sh
-An other way of changing the theme, it uses [rofi](https://github.com/davatorium/rofi) to list all themes so you can use it outside the terminal.
+An other way of changing the theme, it uses [rofi](https://github.com/davatorium/rofi) to list the themes so you can use it outside the terminal.
 
 It will call `set-theme.sh` with the selected theme.
 
 Use a shortcut to call this script from your window manager (or sxhd) for maximum efficiency (wow).
+
+There is currently a bug that makes the new picom config not reload. Not sure how to fix this.
 
 If you think of a better name, let me know lmao
 ```
@@ -87,7 +90,7 @@ notice that the red changed everywhere
 ## Todo
 - Finish rofi themes - try to find a way to make the selected element bold but looks doomed
 - Improve polybar setup (mountain) - looks pretty good
-- Rewrite neovim config in Lua
+- Rewrite neovim config in Lua - once the api is a bit more complete
 - Update screenshots
 - Work on Discord themes
 - Refactor some scripts

@@ -15,7 +15,7 @@ rm -rf FiraMono.zip *Windows*
 sudo mkdir -p /share/fonts/FiraMono && sudo mv *.otf /share/fonts/FiraMono
 fc-cache
 
-mkdir -p $HOME/.config/{alacritty,tmux,nvim/colors,polybar/scripts,rofi,bspwm,sxhkd,dunst,X11,zsh}
+mkdir -p $HOME/.config/{alacritty,tmux,nvim/{colors,lua},polybar/scripts,rofi,bspwm,sxhkd,dunst,X11,zsh}
 dir=$(echo -n ~/.mozilla/firefox/ ; grep -i default ~/.mozilla/firefox/installs.ini | awk -F= '{print $2}')
 mkdir -p $dir/chrome
 

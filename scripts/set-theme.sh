@@ -5,6 +5,9 @@ link_files() {
 
 	ln -f ~/.dotfiles/themes/$theme/alacritty/alacritty.yml $XDG_CONFIG_HOME/alacritty
 	ln -f ~/.dotfiles/themes/$theme/tmux/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
+	#ln -f ~/.dotfiles/nvim/init.lua $XDG_CONFIG_HOME/nvim
+	#ln -f ~/.dotfiles/nvim/lua/settings.lua $XDG_CONFIG_HOME/nvim/lua
+	#ln -f ~/.dotfiles/nvim/lua/keymaps.lua $XDG_CONFIG_HOME/nvim/lua
 	ln -f ~/.dotfiles/nvim/init.vim $XDG_CONFIG_HOME/nvim
 	ln -f ~/.dotfiles/nvim/tabline.vim $XDG_CONFIG_HOME/nvim
 	ln -f ~/.dotfiles/nvim/plugins.vim $XDG_CONFIG_HOME/nvim
