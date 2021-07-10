@@ -85,8 +85,8 @@ notice that the red changed everywhere
 ![demontrate chcl.sh](screenshots/chcl.png)
 
 ## Todo
-- Finish rofi themes
-- Improve polybar setup (mountain)
+- Finish rofi themes - try to find a way to make the selected element bold but looks doomed
+- Improve polybar setup (mountain) - looks pretty good
 - Rewrite neovim config in Lua
 - Update screenshots
 - Work on Discord themes
