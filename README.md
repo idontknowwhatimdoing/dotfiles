@@ -95,3 +95,4 @@ notice that the red changed everywhere
 - Work on Discord themes
 - Refactor some scripts
 - Try out [Eww](https://github.com/elkowar/eww) (?)
+- Make uya theme only warm colors (orange, red, yellow)
